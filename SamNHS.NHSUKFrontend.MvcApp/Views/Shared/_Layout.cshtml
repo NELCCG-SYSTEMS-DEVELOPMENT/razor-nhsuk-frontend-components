@@ -1,12 +1,21 @@
-@using SamNHS.NHSUKFrontend.RazorComponents.Models
+﻿@using SamNHS.NHSUKFrontend.RazorComponents.Models
 @{
     var headerProperties = new HeaderProperties
     {
         Organisation = new Organisation { Name = "NHS North East Lincolnshire", Descriptor = "Clinical Commissioning Group" },
         PrimaryLinks = new Link[]
         {
-            new Link { Label = "Home", Url = Url.Action("Index", "Home") },
             new Link { Label = "My Feature", Url = Url.Page("/Index", new { Area = "MyFeature" }) },
+            new Link { Label = "Privacy", Url = Url.Action("Privacy", "Home") }
+        },
+        ShowNav = true
+    };
+
+    var footerProperties = new FooterProperties
+    {
+        Copyright = "© 2021 NHS North East Lincolnshire",
+        Links = new Link[]
+        {
             new Link { Label = "Privacy", Url = Url.Action("Privacy", "Home") }
         }
     };
@@ -16,25 +25,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SamNHS.NHSUKFrontend.MvcApp</title>
+    <title>@ViewData["Title"] - MvcApp</title>
     <link rel="stylesheet" href="~/_content/SamNHS.NHSUKFrontend.RazorComponents/css/nhsuk-4.1.0.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <vc:header properties="@headerProperties">Extra</vc:header>
+    <vc:header properties="@headerProperties"></vc:header>
     <div class="nhsuk-width-container">
         <main role="main" class="nhsuk-main-wrapper">
             @RenderBody()
         </main>
     </div>
-
-    <footer>
-        <div class="nhsuk-footer">
-            <div class="nhsuk-width-container">
-                &copy; 2021 - SamNHS.NHSUKFrontend.MvcApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
-        </div>
-    </footer>
+    <vc:footer properties="@footerProperties"></vc:footer>
     <script src="~/_content/SamNHS.NHSUKFrontend.RazorComponents/js/nhsuk-4.1.0.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
