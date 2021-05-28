@@ -16,7 +16,7 @@
                 <a
                     class="nhsuk-header__link"
                     href="~/"
-                    aria-label="@(Model.Organisation.Name + Model.Organisation.Split + Model.Organisation.Descriptor) homepage"
+                    aria-label="@(string.Join(" ", Model.Organisation.Name, Model.Organisation.Split, Model.Organisation.Descriptor).Replace("  ", " ").Trim()) homepage"
                 >
                     @if (Model.Organisation.LogoUrl != null) {
                     <img
@@ -102,7 +102,6 @@
         <div
             class="nhsuk-header__content"
             id="content-header"
-            bind:this={menuSearchContainer}
         >
             @if (Model.ShowNav)
             {
@@ -110,8 +109,6 @@
                     <button
                         class="nhsuk-header__menu-toggle"
                         id="toggle-menu"
-                        on:click={toggleMenu}
-                        bind:this={toggleMenuButton}
                         aria-controls="header-navigation"
                         aria-label="Open menu">Menu</button
                     >
