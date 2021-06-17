@@ -1,8 +1,8 @@
-namespace SamNHS.NHSUKFrontend.RazorComponents.ViewComponents.Navigation
+namespace SamNHS.NHSUKFrontend.Razor.ViewComponents.Navigation
 {
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
-    using SamNHS.NHSUKFrontend.RazorComponents.Models;
+    using SamNHS.NHSUKFrontend.Razor.Models;
 
     public class FooterViewComponent : ViewComponent
     {

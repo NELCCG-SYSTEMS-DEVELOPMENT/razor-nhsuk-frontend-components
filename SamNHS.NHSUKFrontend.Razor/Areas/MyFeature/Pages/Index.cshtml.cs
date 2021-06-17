@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace SamNHS.NHSUKFrontend.RazorComponents.Areas.MyFeature.Pages
+namespace SamNHS.NHSUKFrontend.Razor.Areas.MyFeature.Pages
 {
     public class IndexModel : PageModel
     {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace SamNHS.NHSUKFrontend.RazorComponents.MyFeature.Pages
+namespace SamNHS.NHSUKFrontend.Razor.MyFeature.Pages
 {
     public class Page1Model : PageModel
     {

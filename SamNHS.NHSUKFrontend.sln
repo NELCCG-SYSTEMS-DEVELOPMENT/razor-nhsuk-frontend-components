@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SamNHS.NHSUKFrontend.MvcApp", "SamNHS.NHSUKFrontend.MvcApp\SamNHS.NHSUKFrontend.MvcApp.csproj", "{01757DEA-4BFE-4DEA-B958-33104F3716BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SamNHS.NHSUKFrontend.RazorComponents", "SamNHS.NHSUKFrontend.RazorComponents\SamNHS.NHSUKFrontend.RazorComponents.csproj", "{AD2695E0-8738-4E89-8336-881845ABD1DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SamNHS.NHSUKFrontend.Razor", "SamNHS.NHSUKFrontend.Razor\SamNHS.NHSUKFrontend.Razor.csproj", "{AD2695E0-8738-4E89-8336-881845ABD1DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

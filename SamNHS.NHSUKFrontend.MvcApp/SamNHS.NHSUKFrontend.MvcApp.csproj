@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
-    <ProjectReference Include="..\SamNHS.NHSUKFrontend.RazorComponents\SamNHS.NHSUKFrontend.RazorComponents.csproj" />
+    <ProjectReference Include="..\SamNHS.NHSUKFrontend.RazorComponents\SamNHS.NHSUKFrontend.Razor.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

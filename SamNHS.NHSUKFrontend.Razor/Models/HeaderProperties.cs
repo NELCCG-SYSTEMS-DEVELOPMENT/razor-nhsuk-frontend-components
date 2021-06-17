@@ -1,4 +1,4 @@
-﻿namespace SamNHS.NHSUKFrontend.RazorComponents.Models
+﻿namespace SamNHS.NHSUKFrontend.Razor.Models
 {
     using System.Collections.Generic;
 
