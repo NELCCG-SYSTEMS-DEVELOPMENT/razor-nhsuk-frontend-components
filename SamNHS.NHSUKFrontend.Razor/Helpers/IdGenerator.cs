@@ -1,7 +1,7 @@
 ﻿namespace SamNHS.NHSUKFrontend.Razor.Helpers
 {
     using Microsoft.AspNetCore.Mvc.Rendering;
-    using System;
+    using Microsoft.AspNetCore.WebUtilities;
     using System.Security.Cryptography;
 
     public class IdGenerator
@@ -15,9 +15,9 @@
 
         public static string GenerateId(string prefix, string suffix = "")
         {
-            byte[] key = new byte[6];
+            byte[] key = new byte[4];
             rngCsp.GetBytes(key);
-            return TagBuilder.CreateSanitizedId($"{prefix}{Convert.ToBase64String(key)}{suffix}", "");
+            return TagBuilder.CreateSanitizedId($"{prefix}{WebEncoders.Base64UrlEncode(key)}{suffix}", "");
         }
     }
 }
