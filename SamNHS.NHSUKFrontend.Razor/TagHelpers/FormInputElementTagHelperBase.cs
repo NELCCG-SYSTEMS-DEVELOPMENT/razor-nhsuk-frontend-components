@@ -22,38 +22,19 @@
 
             if (this.For != null)
             {
-                var property = this.For.Name;
-                var isNestedProperty = property.Contains(".");
-                ModelExplorer modelExplorer = null;
-                if (isNestedProperty)
+                var value = this.For.Model;
+
+                this.ReadOnly = this.For.Metadata.IsReadOnly;
+                if (this.For.Metadata.ModelType != typeof(bool))
                 {
-                    var parts = property.Split(".");
-                    foreach (var part in parts)
-                    {
-                        modelExplorer = (modelExplorer ?? this.For.ModelExplorer.Container).GetExplorerForProperty(part);
-                    }
-                }
-                else
-                {
-                    modelExplorer = this.For.ModelExplorer.Container.GetExplorerForProperty(property);
+                    this.Required = this.For.Metadata.IsRequired;
                 }
 
-                if (modelExplorer != null)
-                {
-                    var value = modelExplorer.Model;
+                this.Id = IdGenerator.GenerateId($"{this.For.Name.Replace(".", "_")}__");
+                output.Attributes.SetAttribute("id", this.Id);
+                this.Name = this.For.Name;
 
-                    this.ReadOnly = modelExplorer.Metadata.IsReadOnly;
-                    if (modelExplorer.ModelType != typeof(bool))
-                    {
-                        this.Required = modelExplorer.Metadata.IsRequired;
-                    }
-
-                    this.Id = IdGenerator.GenerateId($"{property.Replace(".", "_")}__");
-                    output.Attributes.SetAttribute("id", this.Id);
-                    this.Name = property;
-
-                    this.ModelValue = this.Value = value;
-                }
+                this.ModelValue = this.Value = value;
             }
 
             if (string.IsNullOrWhiteSpace(this.Name))
