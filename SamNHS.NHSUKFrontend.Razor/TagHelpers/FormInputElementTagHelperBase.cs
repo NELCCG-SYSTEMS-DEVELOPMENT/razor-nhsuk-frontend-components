@@ -4,6 +4,8 @@
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
     using Microsoft.AspNetCore.Razor.TagHelpers;
     using SamNHS.NHSUKFrontend.Razor.Helpers;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
 
     public abstract class FormInputElementTagHelperBase : ElementTagHelperBase
     {
@@ -28,6 +30,11 @@
                 if (this.For.Metadata.ModelType != typeof(bool))
                 {
                     this.Required = this.For.Metadata.IsRequired;
+                    var requiredAttribute = this.For.Metadata.ValidatorMetadata.OfType<RequiredAttribute>().FirstOrDefault();
+                    if (requiredAttribute != null)
+                    {
+                        output.Attributes.SetAttribute("data-required-message", requiredAttribute.FormatErrorMessage(this.For.Metadata.GetDisplayName()));
+                    }
                 }
 
                 this.Id = IdGenerator.GenerateId($"{this.For.Name.Replace(".", "_")}__");
@@ -69,7 +76,7 @@
             if (this.Required)
             {
                 context.Items.Add("input-required", true);
-                output.Attributes.SetAttribute("required", "required");
+                output.Attributes.SetAttribute("data-required", "true");
             }
         }
     }
