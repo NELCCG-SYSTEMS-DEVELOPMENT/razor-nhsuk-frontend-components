@@ -15,6 +15,9 @@
         /// Set if checked (ignored if bound to model)
         /// </summary>
         public bool Checked { get; set; }
+        /// <summary>
+        /// Id of conditional element
+        /// </summary>
         public string AriaControls { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -56,6 +59,9 @@
             if (!string.IsNullOrWhiteSpace(this.AriaControls))
             {
                 output.Attributes.SetAttribute("aria-controls", this.AriaControls);
+                output.Attributes.SetAttribute("aria-expanded",
+                    output.Attributes.TryGetAttribute("checked", out _).ToString().ToLower()
+                );
             }
 
             var wrapper = new TagBuilder("div");
