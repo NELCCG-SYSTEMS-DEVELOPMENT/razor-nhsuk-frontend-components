@@ -40,8 +40,7 @@
                 this.Id = IdGenerator.GenerateId($"{this.For.Name.Replace(".", "_")}__");
                 output.Attributes.SetAttribute("id", this.Id);
                 this.Name = this.For.Name;
-
-                this.ModelValue = this.Value = value;
+                this.SetModelValue(value);
             }
 
             if (string.IsNullOrWhiteSpace(this.Name))
@@ -78,6 +77,11 @@
                 context.Items.Add("input-required", true);
                 output.Attributes.SetAttribute("data-required", "true");
             }
+        }
+
+        public virtual void SetModelValue(object value)
+        {
+            this.ModelValue = this.Value = value;
         }
     }
 }
