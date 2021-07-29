@@ -8,7 +8,7 @@
 
     [HtmlTargetElement("nhsuk-checkbox")]
     [RestrictChildren("nhsuk-hint")]
-    public class CheckBoxTagHelper : FormInputElementTagHelperBase
+    public class CheckboxTagHelper : FormInputElementTagHelperBase
     {
         public string Label { get; set; }
         /// <summary>
