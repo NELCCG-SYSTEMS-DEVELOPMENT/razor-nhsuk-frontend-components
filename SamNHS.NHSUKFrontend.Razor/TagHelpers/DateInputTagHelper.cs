@@ -40,9 +40,9 @@
                 this.DateYear = date.Year;
             }
 
-            var dayTag = CreateInputItem($"{this.Name}.Day", InputType.Day);
-            var monthTag = CreateInputItem($"{this.Name}.Month", InputType.Month);
-            var yearTag = CreateInputItem($"{this.Name}.Year", InputType.Year);
+            var dayTag = CreateInputItem($"{this.Id}__Day", $"{this.Name}.Day", InputType.Day);
+            var monthTag = CreateInputItem($"{this.Id}__Month", $"{this.Name}.Month", InputType.Month);
+            var yearTag = CreateInputItem($"{this.Id}__Year", $"{this.Name}.Year", InputType.Year);
 
             output.Content.AppendHtml(dayTag);
             output.Content.AppendHtml(monthTag);
@@ -52,11 +52,12 @@
             output.PreElement.AppendHtml(childContent);
         }
 
-        private TagBuilder CreateInputItem(string name, InputType inputType)
+        private TagBuilder CreateInputItem(string id, string name, InputType inputType)
         {
             var input = new TagBuilder("input");
             input.AddCssClass("nhsuk-input nhsuk-date-input__input");
             input.Attributes.Add("name", name);
+            input.Attributes.Add("id", id);
 
             var dateInputItem = new TagBuilder("div");
             dateInputItem.AddCssClass("nhsuk-date-input__item");
@@ -66,6 +67,7 @@
 
             var label = new TagBuilder("label");
             label.AddCssClass("nhsuk-label nhsuk-date-input__label");
+            label.Attributes.Add("for", id);
 
             if (inputType == InputType.Day)
             {
