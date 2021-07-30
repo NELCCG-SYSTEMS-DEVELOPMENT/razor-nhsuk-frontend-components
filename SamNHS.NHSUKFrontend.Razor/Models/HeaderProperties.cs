@@ -12,5 +12,6 @@
         public bool WhiteHeader { get; set; }
         public bool ShowNav { get; set; }
         public bool ShowSearch { get; set; }
+        public bool SvgFallbackImage { get; set; }
     }
 }
