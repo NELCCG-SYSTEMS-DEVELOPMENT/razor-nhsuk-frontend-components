@@ -6,7 +6,7 @@
         PrimaryLinks = new Link[]
         {
             new Link { Label = "My Feature", Url = Url.Page("/Index", new { Area = "MyFeature" }) },
-            new Link { Label = "Privacy", Url = Url.Action("Privacy", "Home") }
+            new Link { Label = "Form Elements", Url = Url.Action("Form", "Home") },
         },
         ShowNav = true
     };
@@ -31,6 +31,25 @@
 </head>
 <body>
     <vc:header properties="@headerProperties"></vc:header>
+    @if (ViewData["HeroTitle"] != null)
+    {
+        <section class="nhsuk-hero">
+            <div class="nhsuk-width-container nhsuk-hero--border">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <div class="nhsuk-hero__wrapper">
+                            <h1 class="nhsuk-u-margin-bottom-3">@ViewData["HeroTitle"]</h1>
+                            @if (ViewData["HeroMessage"] != null)
+                            {
+                                <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">@ViewData["HeroMessage"]</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+    @await RenderSectionAsync("PreContent", required: false)
     <div class="nhsuk-width-container">
         <main role="main" class="nhsuk-main-wrapper">
             @RenderBody()
