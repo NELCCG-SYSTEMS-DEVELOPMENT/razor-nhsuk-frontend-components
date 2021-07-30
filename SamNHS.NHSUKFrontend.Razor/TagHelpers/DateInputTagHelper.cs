@@ -31,7 +31,6 @@
             output.TagName = "div";
             output.TagMode = TagMode.StartTagAndEndTag;
             output.AddClass("nhsuk-date-input", HtmlEncoder.Default);
-            output.Attributes.RemoveAll("id");
             output.Attributes.RemoveAll("name");
 
             if (this.Value is DateTime date)
@@ -41,9 +40,9 @@
                 this.DateYear = date.Year;
             }
 
-            var dayTag = CreateInputItem($"{this.Name}-day", InputType.Day);
-            var monthTag = CreateInputItem($"{this.Name}-month", InputType.Month);
-            var yearTag = CreateInputItem($"{this.Name}-year", InputType.Year);
+            var dayTag = CreateInputItem($"{this.Name}.Day", InputType.Day);
+            var monthTag = CreateInputItem($"{this.Name}.Month", InputType.Month);
+            var yearTag = CreateInputItem($"{this.Name}.Year", InputType.Year);
 
             output.Content.AppendHtml(dayTag);
             output.Content.AppendHtml(monthTag);
@@ -57,6 +56,7 @@
         {
             var input = new TagBuilder("input");
             input.AddCssClass("nhsuk-input nhsuk-date-input__input");
+            input.Attributes.Add("name", name);
 
             var dateInputItem = new TagBuilder("div");
             dateInputItem.AddCssClass("nhsuk-date-input__item");
