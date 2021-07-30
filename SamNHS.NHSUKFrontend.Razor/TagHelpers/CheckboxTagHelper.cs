@@ -5,6 +5,7 @@
     using System.Text.Encodings.Web;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc.Rendering;
+    using System.Collections;
 
     [HtmlTargetElement("nhsuk-checkbox")]
     [RestrictChildren("nhsuk-hint")]
@@ -42,6 +43,10 @@
                     }
                 }
                 else if (this.ModelValue != null && this.ModelValue.Equals(this.Value))
+                {
+                    output.Attributes.SetAttribute("checked", "checked");
+                }
+                else if (this.ModelValue is IList list && list.Contains(this.Value))
                 {
                     output.Attributes.SetAttribute("checked", "checked");
                 }
