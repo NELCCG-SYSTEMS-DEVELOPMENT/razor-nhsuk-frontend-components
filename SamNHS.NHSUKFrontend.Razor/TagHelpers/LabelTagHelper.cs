@@ -21,6 +21,8 @@
         [HtmlAttributeName("asp-for")]
         public ModelExpression For { get; set; }
 
+        public int HeadingLevel { get; set; } = 1;
+        public bool IsPageHeading { get; set; }
         public bool IsBold { get; set; }
         public LabelSize? Size { get; set; }
         public string VisuallyHiddenText { get; set; }
@@ -38,6 +40,12 @@
             if (this.LabelIsVisuallyHidden)
             {
                 output.AddClass("nhsuk-u-visually-hidden", HtmlEncoder.Default);
+            }
+
+            if (this.IsPageHeading)
+            {
+                output.PreContent.AppendHtml($"<h{this.HeadingLevel} class=\"nhsuk-fieldset__heading\">");
+                output.PostContent.AppendHtml($"</h{this.HeadingLevel}>");
             }
 
             switch (this.Size)
