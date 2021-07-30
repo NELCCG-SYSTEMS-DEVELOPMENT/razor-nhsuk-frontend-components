@@ -24,6 +24,8 @@
         public bool IsBold { get; set; }
         public LabelSize? Size { get; set; }
         public string VisuallyHiddenText { get; set; }
+        public bool LabelIsVisuallyHidden { get; set; }
+
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "label";
@@ -31,6 +33,11 @@
             if (this.IsBold)
             {
                 output.AddClass("nhsuk-label--s", HtmlEncoder.Default);
+            }
+
+            if (this.LabelIsVisuallyHidden)
+            {
+                output.AddClass("nhsuk-u-visually-hidden", HtmlEncoder.Default);
             }
 
             switch (this.Size)
