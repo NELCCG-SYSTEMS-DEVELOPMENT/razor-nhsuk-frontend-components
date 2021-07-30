@@ -36,12 +36,12 @@
                 if (this.For.Metadata.ModelType == typeof(bool))
                 {
                     output.Attributes.RemoveAll("value");
-                    if (this.ModelValue.Equals(true))
+                    if (this.ModelValue != null && this.ModelValue.Equals(true))
                     {
                         output.Attributes.SetAttribute("checked", "checked");
                     }
                 }
-                else if (this.ModelValue.Equals(this.Value))
+                else if (this.ModelValue != null && this.ModelValue.Equals(this.Value))
                 {
                     output.Attributes.SetAttribute("checked", "checked");
                 }
