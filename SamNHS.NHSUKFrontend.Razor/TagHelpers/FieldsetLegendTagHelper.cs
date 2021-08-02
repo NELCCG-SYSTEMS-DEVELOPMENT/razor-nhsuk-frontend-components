@@ -40,22 +40,18 @@
                 output.PostContent.AppendHtml($"</h{this.HeadingLevel}>");
             }
 
-            switch (this.Size)
+            var legendClass = this.Size switch
             {
-                case LegendSize.ExtraLarge:
-                    output.AddClass("nhsuk-fieldset__legend--xl", HtmlEncoder.Default);
-                    break;
-                case LegendSize.Large:
-                    output.AddClass("nhsuk-fieldset__legend--l", HtmlEncoder.Default);
-                    break;
-                case LegendSize.Medium:
-                    output.AddClass("nhsuk-fieldset__legend--m", HtmlEncoder.Default);
-                    break;
-                case LegendSize.Small:
-                    output.AddClass("nhsuk-fieldset__legend--s", HtmlEncoder.Default);
-                    break;
-                default:
-                    break;
+                LegendSize.ExtraLarge => "nhsuk-fieldset__legend--xl",
+                LegendSize.Large => "nhsuk-fieldset__legend--l",
+                LegendSize.Medium => "nhsuk-fieldset__legend--m",
+                LegendSize.Small => "nhsuk-fieldset__legend--s",
+                _ => null,
+            };
+
+            if (legendClass != null)
+            {
+                output.AddClass(legendClass, HtmlEncoder.Default);
             }
         }
     }

@@ -19,25 +19,19 @@
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             var ns = System.IO.Path.GetFileNameWithoutExtension(this.GetType().Module.Name);
-            output.Attributes.SetAttribute("rel", "stylesheet");
-
-            switch (Version)
+            var href = this.Version switch
             {
-                case FrontendOptions.FrontendVersion.Version__4_1_0:
-                    output.Attributes.Add("href", this.UrlHelperFactory.GetUrlHelper(this.ViewContext).Content(
-                        $"~/_content/{ns}/css/nhsuk-4.1.0.min.css"
-                    ));
-                    
-                    break;
-                case FrontendOptions.FrontendVersion.Version__5_1_0:
-                    output.Attributes.Add("href", this.UrlHelperFactory.GetUrlHelper(this.ViewContext).Content(
-                        $"~/_content/{ns}/css/nhsuk-5.1.0.min.css"
-                    ));
-                    break;
-                default:
-                    break;
+                FrontendOptions.FrontendVersion.Version__4_1_0 => $"~/_content/{ns}/css/nhsuk-4.1.0.min.css",
+                FrontendOptions.FrontendVersion.Version__5_1_0 => $"~/_content/{ns}/css/nhsuk-5.1.0.min.css",
+                _ => null,
+            };
+
+            if (href != null)
+            {
+                var urlHelper = this.UrlHelperFactory.GetUrlHelper(this.ViewContext);
+                output.Attributes.SetAttribute("rel", "stylesheet");
+                output.Attributes.SetAttribute("href", urlHelper.Content(href));
             }
-            
         }
     }
 }

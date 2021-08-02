@@ -48,22 +48,18 @@
                 output.PostContent.AppendHtml($"</h{this.HeadingLevel}>");
             }
 
-            switch (this.Size)
+            var labelClass = this.Size switch
             {
-                case LabelSize.ExtraLarge:
-                    output.AddClass("nhsuk-label--xl", HtmlEncoder.Default);
-                    break;
-                case LabelSize.Large:
-                    output.AddClass("nhsuk-label--l", HtmlEncoder.Default);
-                    break;
-                case LabelSize.Medium:
-                    output.AddClass("nhsuk-label--m", HtmlEncoder.Default);
-                    break;
-                case LabelSize.Small:
-                    output.AddClass("nhsuk-label--s", HtmlEncoder.Default);
-                    break;
-                default:
-                    break;
+                LabelSize.ExtraLarge => "nhsuk-label--xl",
+                LabelSize.Large => "nhsuk-label--l",
+                LabelSize.Medium => "nhsuk-label--m",
+                LabelSize.Small => "nhsuk-label--s",
+                _ => null,
+            };
+
+            if (labelClass != null)
+            {
+                output.AddClass(labelClass, HtmlEncoder.Default);
             }
 
             if (context.Items.TryGetValue("input-id", out object inputId))

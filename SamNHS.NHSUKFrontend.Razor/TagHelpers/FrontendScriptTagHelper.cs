@@ -19,22 +19,17 @@
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             var ns = System.IO.Path.GetFileNameWithoutExtension(this.GetType().Module.Name);
-
-            switch (Version)
+            var href = this.Version switch
             {
-                case FrontendOptions.FrontendVersion.Version__4_1_0:
-                    output.Attributes.Add("src", this.UrlHelperFactory.GetUrlHelper(this.ViewContext).Content(
-                        $"~/_content/{ns}/js/nhsuk-4.1.0.min.js"
-                    ));
-                    
-                    break;
-                case FrontendOptions.FrontendVersion.Version__5_1_0:
-                    output.Attributes.Add("src", this.UrlHelperFactory.GetUrlHelper(this.ViewContext).Content(
-                        $"~/_content/{ns}/js/nhsuk-5.1.0.min.js"
-                    ));
-                    break;
-                default:
-                    break;
+                FrontendOptions.FrontendVersion.Version__4_1_0 => $"~/_content/{ns}/js/nhsuk-4.1.0.min.js",
+                FrontendOptions.FrontendVersion.Version__5_1_0 => $"~/_content/{ns}/js/nhsuk-5.1.0.min.js",
+                _ => null,
+            };
+
+            if (href != null)
+            {
+                var urlHelper = this.UrlHelperFactory.GetUrlHelper(this.ViewContext);
+                output.Attributes.SetAttribute("src", urlHelper.Content(href));
             }
             
         }

@@ -4,6 +4,7 @@
     using Microsoft.AspNetCore.Mvc.TagHelpers;
     using System.Text.Encodings.Web;
     using System.Threading.Tasks;
+    using System;
 
     [HtmlTargetElement("nhsuk-button")]
     public class ButtonTagHelper : ElementTagHelperBase
@@ -24,19 +25,17 @@
             await base.ProcessAsync(context, output);
             output.TagName = "button";
             output.TagMode = TagMode.StartTagAndEndTag;
-            switch (this.Type)
+            var buttonType = this.Type switch
             {
-                case ButtonType.Button:
-                    output.Attributes.SetAttribute("type", "button");
-                    break;
-                case ButtonType.Reset:
-                    output.Attributes.SetAttribute("type", "reset");
-                    break;
-                case ButtonType.Submit:
-                    output.Attributes.SetAttribute("type", "submit");
-                    break;
-                default:
-                    break;
+                ButtonType.Button => "button",
+                ButtonType.Reset => "reset",
+                ButtonType.Submit => "submit",
+                _ => null,
+            };
+
+            if (buttonType != null)
+            {
+                output.Attributes.SetAttribute("type", buttonType);
             }
 
             output.AddClass("nhsuk-button", HtmlEncoder.Default);

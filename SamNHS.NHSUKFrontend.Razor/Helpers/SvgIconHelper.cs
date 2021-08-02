@@ -46,51 +46,23 @@
         public string GetSvgIconSubPath(SvgIcon svgIcon)
         {
             var ns = Path.GetFileNameWithoutExtension(this.GetType().Module.Name);
-            string iconName = null;
-            switch (svgIcon)
+            var iconName = svgIcon switch
             {
-                case SvgIcon.ArrowLeft:
-                    iconName = "icon-arrow-left";
-                    break;
-                case SvgIcon.ArrowRight:
-                    iconName = "icon-arrow-right";
-                    break;
-                case SvgIcon.ArrowRightCircle:
-                    iconName = "icon-arrow-right-circle";
-                    break;
-                case SvgIcon.ChevronLeft:
-                    iconName = "icon-chevron-left";
-                    break;
-                case SvgIcon.ChevronRight:
-                    iconName = "icon-chevron-right";
-                    break;
-                case SvgIcon.Close:
-                    iconName = "icon-close";
-                    break;
-                case SvgIcon.Cross:
-                    iconName = "icon-cross";
-                    break;
-                case SvgIcon.EmDash:
-                    iconName = "icon-emdash";
-                    break;
-                case SvgIcon.EmDashSmall:
-                    iconName = "icon-emdash-small";
-                    break;
-                case SvgIcon.Minus:
-                    iconName = "icon-minus";
-                    break;
-                case SvgIcon.Plus:
-                    iconName = "icon-plus";
-                    break;
-                case SvgIcon.Search:
-                    iconName = "icon-search";
-                    break;
-                case SvgIcon.Tick:
-                    iconName = "icon-tick";
-                    break;
-                default:
-                    break;
-            }
+                SvgIcon.ArrowLeft => "icon-arrow-left",
+                SvgIcon.ArrowRight => "icon-arrow-right",
+                SvgIcon.ArrowRightCircle => "icon-arrow-right-circle",
+                SvgIcon.ChevronLeft => "icon-chevron-left",
+                SvgIcon.ChevronRight => "icon-chevron-right",
+                SvgIcon.Close => "icon-close",
+                SvgIcon.Cross => "icon-cross",
+                SvgIcon.EmDash => "icon-emdash",
+                SvgIcon.EmDashSmall => "icon-emdash-small",
+                SvgIcon.Minus => "icon-minus",
+                SvgIcon.Plus => "icon-plus",
+                SvgIcon.Search => "icon-search",
+                SvgIcon.Tick => "icon-tick",
+                _ => null,
+            };
 
             if (iconName == null) return null;
 
