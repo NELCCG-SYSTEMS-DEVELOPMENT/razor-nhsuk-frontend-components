@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SamNHS.NHSUKFrontend.Razor.Helpers;
 
 namespace SamNHS.NHSUKFrontend.MvcApp
 {
@@ -25,6 +26,7 @@ namespace SamNHS.NHSUKFrontend.MvcApp
         {
             services.AddRazorPages();
             services.AddControllersWithViews();
+            services.AddSingleton<SvgIconHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

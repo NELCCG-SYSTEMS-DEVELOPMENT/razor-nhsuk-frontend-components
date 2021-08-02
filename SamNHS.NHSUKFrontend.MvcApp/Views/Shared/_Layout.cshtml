@@ -7,6 +7,7 @@
         {
             new Link { Label = "My Feature", Url = Url.Page("/Index", new { Area = "MyFeature" }) },
             new Link { Label = "Form Elements", Url = Url.Action("Form", "Home") },
+            new Link { Label = "SVG Icons", Url = Url.Action("SvgIcons", "Home") },
         },
         ShowNav = true
     };
@@ -28,6 +29,7 @@
     <title>@ViewData["Title"] - MvcApp</title>
     <link nhsuk-frontend-version="Version__5_1_0" />
     <link rel="stylesheet" href="~/css/site.css" />
+    @await RenderSectionAsync("Head", required: false)
 </head>
 <body>
     <vc:header properties="@headerProperties"></vc:header>

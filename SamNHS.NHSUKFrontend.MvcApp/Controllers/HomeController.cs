@@ -40,6 +40,11 @@
             return View(model);
         }
 
+        public IActionResult SvgIcons()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
