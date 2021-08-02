@@ -32,6 +32,7 @@
     @await RenderSectionAsync("Head", required: false)
 </head>
 <body>
+    <a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
     <vc:header properties="@headerProperties"></vc:header>
     @if (ViewData["HeroTitle"] != null)
     {
@@ -53,7 +54,7 @@
     }
     @await RenderSectionAsync("PreContent", required: false)
     <div class="nhsuk-width-container">
-        <main role="main" class="nhsuk-main-wrapper">
+        <main role="main" id="maincontent" class="nhsuk-main-wrapper">
             @RenderBody()
         </main>
     </div>
