@@ -6,7 +6,7 @@
     using SamNHS.NHSUKFrontend.Razor.Models;
     using System.Text.Encodings.Web;
 
-    [HtmlTargetElement("link")]
+    [HtmlTargetElement("link", Attributes = "nhsuk-frontend-version")]
     public class FrontendLinkTagHelper : UrlResolutionTagHelper
     {
         public FrontendLinkTagHelper(IUrlHelperFactory urlHelperFactory, HtmlEncoder htmlEncoder) : base(urlHelperFactory, htmlEncoder)
@@ -18,8 +18,6 @@
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            if (!context.AllAttributes.ContainsName("nhsuk-frontend-version")) return;
-
             var ns = System.IO.Path.GetFileNameWithoutExtension(this.GetType().Module.Name);
             output.Attributes.SetAttribute("rel", "stylesheet");
 
