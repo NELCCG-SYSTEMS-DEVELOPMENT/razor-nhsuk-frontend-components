@@ -1,0 +1,224 @@
+﻿@using NELCCG.NHSUKFrontend.Razor.Helpers
+@using Microsoft.AspNetCore.Mvc.Routing;
+@inject SvgIconHelper iconHelper
+@inject IUrlHelperFactory urlHelperFactory
+@{
+    ViewData["Title"] = ViewData["HeroTitle"] = "SVG Icons";
+    var urlHelper = urlHelperFactory.GetUrlHelper(this.ViewContext);
+}
+@section Head {
+    <style>
+        img.em-dash-icon {
+            width: 1em;
+            height: 1px;
+        }
+        img.em-dash-small-icon {
+            width: 0.842em;
+            height: 1px;
+        }
+    </style>
+}
+
+<h2>Embed with &lt;img src...&gt;</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Icon</th>
+            <th>Label</th>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.ArrowLeft))"
+                     alt="Arrow Left" />
+            </td>
+            <td>Arrow Left</td>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.ArrowRight))"
+                     alt="Arrow Right" />
+            </td>
+            <td>Arrow Right</td>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.ArrowRightCircle))"
+                     alt="Arrow Right Circle" />
+            </td>
+            <td>Arrow Right Circle</td>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.ChevronLeft))"
+                     alt="Chevron Left" />
+            </td>
+            <td>Chevron Left</td>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.ChevronRight))"
+                     alt="Chevron Right" />
+
+            </td>
+            <td>Chevron Right</td>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.Close))"
+                     alt="Close" />
+
+            </td>
+            <td>Close</td>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.Cross))"
+                     alt="Cross" />
+            </td>
+            <td>Cross</td>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon em-dash-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.EmDash))"
+                     alt="Em Dash" />
+            </td>
+            <td>Em Dash</td>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon em-dash-small-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.EmDashSmall))"
+                     alt="Em Dash Small" />
+            </td>
+            <td>Em Dash Small</td>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.Minus))"
+                     alt="Minus" />
+            </td>
+            <td>Minus</td>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.Plus))" alt="Plus" />
+            </td>
+            <td>Plus</td>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.Search))"
+                     alt="Search" />
+            </td>
+            <td>Search</td>
+        </tr>
+        <tr>
+            <td>
+                <img class="nhsuk-icon"
+                     src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.Tick))" alt="Tick" />
+            </td>
+            <td>Tick</td>
+        </tr>
+    </thead>
+</table>
+
+<h2>Embed Raw SVG</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Icon</th>
+            <th>Label</th>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.ArrowLeft))
+            </td>
+            <td>Arrow Left</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.ArrowRight))
+            </td>
+            <td>Arrow Right</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.ArrowRightCircle))
+            </td>
+            <td>Arrow Right Circle</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.ChevronLeft))
+            </td>
+            <td>Chevron Left</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.ChevronRight))
+            </td>
+            <td>Chevron Right</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.Close))
+            </td>
+            <td>Close</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.Cross))
+            </td>
+            <td>Cross</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.EmDash))
+            </td>
+            <td>Em Dash</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.EmDashSmall))
+            </td>
+            <td>Em Dash Small</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.Minus))
+            </td>
+            <td>Minus</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.Plus))
+            </td>
+            <td>Plus</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.Search))
+            </td>
+            <td>Search</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.Tick))
+            </td>
+            <td>Tick</td>
+        </tr>
+    </thead>
+</table>
+
+<a nhsuk-back-link asp-action="Index">Go back</a>

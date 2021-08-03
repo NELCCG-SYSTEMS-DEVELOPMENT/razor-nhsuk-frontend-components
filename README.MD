@@ -1,7 +1,7 @@
 # NHS.UK Frontend Razor Components
 
-This solution consists of two projects, one with the Razor Components (SamNHS.NHSUKFrontent.Razor)
-and a sample application consuming those components (SamNHS.NHSUKFrontend.MvcApp). It requires .NET Core 5.0 or later.
+This solution consists of two projects, one with the Razor Components (NELCCG.NHSUKFrontent.Razor)
+and a sample application consuming those components (NELCCG.NHSUKFrontend.MvcApp). It requires .NET Core 5.0 or later.
 
 The form components can be bound to models using `asp-for`.
 
@@ -39,7 +39,7 @@ In page:
 
 ### Tag Helpers
 
-In `_ViewImports.cshtml` add `@addTagHelper *, SamNHS.NHSUKFrontend.Razor`
+In `_ViewImports.cshtml` add `@addTagHelper *, NELCCG.NHSUKFrontend.Razor`
 
 #### ActionLinkTagHelper
 
@@ -175,7 +175,7 @@ In page `<body>`:
 @{
     var footerProperties = new FooterProperties
     {
-        Copyright = "© 2021 NHS North East Lincolnshire",
+        Copyright = "ï¿½ 2021 NHS North East Lincolnshire",
         Links = new Link[]
         {
             new Link { Label = "Privacy", Url = Url.Action("Privacy", "Home") }

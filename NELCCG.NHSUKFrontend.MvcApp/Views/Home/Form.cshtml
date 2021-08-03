@@ -1,0 +1,92 @@
+﻿@using NELCCG.NHSUKFrontend.Razor.Helpers
+@using NELCCG.NHSUKFrontend.Razor.TagHelpers
+@inject SvgIconHelper iconHelper
+@model User
+@{
+    ViewData["Title"] = ViewData["HeroTitle"] = "Form Elements";
+    ViewData["HeroMessage"] = "This is an example of using the tag helpers and the date input helper.";
+}
+
+@section PreContent {
+    <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+        <div class="nhsuk-width-container">
+            <ol class="nhsuk-breadcrumb__list">
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" asp-action="Index">Home</a></li>
+            </ol>
+            <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" asp-action="Index">Go home</a></p>
+        </div>
+    </nav>
+}
+
+<form method="post">
+    <nhsuk-fieldset>
+        <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your name?</nhsuk-fieldset-legend>
+        <nhsuk-form-group>
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-half">
+                    <nhsuk-input asp-for="GivenName">
+                        <nhsuk-label asp-for="GivenName"></nhsuk-label>
+                    </nhsuk-input>
+                </div>
+                <div class="nhsuk-grid-column-one-half">
+                    <nhsuk-input asp-for="Surname">
+                        <nhsuk-label asp-for="Surname"></nhsuk-label>
+                    </nhsuk-input>
+                </div>
+            </div>
+        </nhsuk-form-group>
+    </nhsuk-fieldset>
+
+    <nhsuk-fieldset>
+        <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your date of birth?</nhsuk-fieldset-legend>
+        <nhsuk-form-group>
+            <nhsuk-date-input asp-for="DateOfBirth">
+                <nhsuk-label asp-for="DateOfBirth" label-is-visually-hidden></nhsuk-label>
+            </nhsuk-date-input>
+        </nhsuk-form-group>
+    </nhsuk-fieldset>
+
+    <nhsuk-fieldset>
+        <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your favourite colour?</nhsuk-fieldset-legend>
+        <nhsuk-form-group>
+            <nhsuk-radios contains-conditional>
+                <nhsuk-radio asp-for="FavouriteColour" label="Red" value="@("Red")"></nhsuk-radio>
+                <nhsuk-radio asp-for="FavouriteColour" label="Green" value="@("Green")"></nhsuk-radio>
+                <nhsuk-radio asp-for="FavouriteColour" label="Blue" value="@("Blue")"></nhsuk-radio>
+                <nhsuk-radio asp-for="FavouriteColour" label="Other" value="@("Other")" aria-controls="favourite_colour_other"></nhsuk-radio>
+                <nhsuk-radio-conditional id="favourite_colour_other" hidden="@(Model?.FavouriteColour != "Other")">
+                    <nhsuk-input asp-for="FavouriteColourOther">
+                        <nhsuk-label asp-for="FavouriteColourOther" label-is-visually-hidden></nhsuk-label>
+                        <nhsuk-hint>Please enter your favourite colour</nhsuk-hint>
+                    </nhsuk-input>
+                </nhsuk-radio-conditional>
+            </nhsuk-radios>
+        </nhsuk-form-group>
+    </nhsuk-fieldset>
+
+    <nhsuk-fieldset>
+        <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your nationality?</nhsuk-fieldset-legend>
+        <nhsuk-hint>If you have dual nationality, select all options that are relevant to you.</nhsuk-hint>
+        <nhsuk-form-group>
+            <nhsuk-checkboxes>
+                <nhsuk-checkbox asp-for="Nationality" label="British" value="@("british")">
+                    <nhsuk-hint>including English, Scottish, Welsh and Northern Irish</nhsuk-hint>
+                </nhsuk-checkbox>
+                <nhsuk-checkbox asp-for="Nationality" label="Irish" value="@("irish")"></nhsuk-checkbox>
+                <nhsuk-checkbox asp-for="Nationality" label="Citizen of another country" value="@("other")"></nhsuk-checkbox>
+            </nhsuk-checkboxes>
+        </nhsuk-form-group>
+    </nhsuk-fieldset>
+
+    <nhsuk-form-group>
+        <nhsuk-textarea asp-for="Biography">
+            <nhsuk-label asp-for="Biography" size="LabelTagHelper.LabelSize.Medium" is-page-heading heading-level="2"></nhsuk-label>
+            <nhsuk-hint>Tell us a little something about yourself</nhsuk-hint>
+        </nhsuk-textarea>
+    </nhsuk-form-group>
+
+    <nhsuk-button>Submit Button</nhsuk-button>
+    <nhsuk-button secondary type="Reset">Reset Button (secondary)</nhsuk-button>
+    <nhsuk-button reverse type="Button">Other Button (reverse)</nhsuk-button>
+
+</form>
