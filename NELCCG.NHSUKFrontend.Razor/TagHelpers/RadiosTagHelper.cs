@@ -6,7 +6,7 @@
     using System.Threading.Tasks;
 
     [HtmlTargetElement("nhsuk-radios")]
-    [RestrictChildren("nhsuk-radio", "nhsuk-radio-conditional")]
+    [RestrictChildren("nhsuk-radio", "nhsuk-radio-conditional", "nhsuk-radio-divider")]
     public class RadiosTagHelper : ElementTagHelperBase
     {
         public bool ContainsConditional { get; set; }

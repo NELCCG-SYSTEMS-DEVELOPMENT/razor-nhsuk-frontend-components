@@ -6,7 +6,7 @@
     using System.Threading.Tasks;
 
     [HtmlTargetElement("nhsuk-checkboxes")]
-    [RestrictChildren("nhsuk-checkbox", "nhsuk-checkbox-conditional")]
+    [RestrictChildren("nhsuk-checkbox", "nhsuk-checkbox-conditional", "nhsuk-checkbox-divider")]
     public class CheckboxesTagHelper : ElementTagHelperBase
     {
         public bool ContainsConditional { get; set; }
