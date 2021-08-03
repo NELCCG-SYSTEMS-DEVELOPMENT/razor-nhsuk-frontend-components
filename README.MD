@@ -126,11 +126,11 @@ In `_ViewImports.cshtml` add `@addTagHelper *, SamNHS.NHSUKFrontend.Razor`
 <nhsuk-radios contains-conditional>
   <nhsuk-radio asp-for="FieldName" label="Option 1" value="@("Option 1")"></nhsuk-radio>
   <nhsuk-radio asp-for="FieldName" label="Option 2" value="@("Option 2")"></nhsuk-radio>
-  <nhsuk-radio asp-for="FieldName" label="Other" aria-controls="conditional"></nhsuk-checkbox>
+  <nhsuk-radio asp-for="FieldName" label="Other" aria-controls="conditional"></nhsuk-radio>
   <nhsuk-radio-conditional hidden="@(Model?.FieldName != "Other")" id="conditional">
     ...
   </nhsuk-radio-conditional>
-</nhsuk-checkboxes>
+</nhsuk-radios>
 ```
 
 #### RadiosTagHelper
@@ -175,7 +175,7 @@ In page `<body>`:
 @{
     var footerProperties = new FooterProperties
     {
-        Copyright = "© 2021 NHS North East Lincolnshire",
+        Copyright = "ï¿½ 2021 NHS North East Lincolnshire",
         Links = new Link[]
         {
             new Link { Label = "Privacy", Url = Url.Action("Privacy", "Home") }
