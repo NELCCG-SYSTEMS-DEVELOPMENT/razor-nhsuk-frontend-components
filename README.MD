@@ -20,12 +20,12 @@ The form components can be bound to models using `asp-for`.
 #### SvgIconHelper  
 
 In `Startup.ConfigureServices`:  
-```
+```csharp
 services.AddSingleton<SvgIconHelper>();
 ```
 
 In page:
-```
+```razor
 @inject SvgIconHelper iconHelper
 @inject IUrlHelperFactory urlHelperFactory
 @{
@@ -59,7 +59,7 @@ In `_ViewImports.cshtml` add `@addTagHelper *, SamNHS.NHSUKFrontend.Razor`
 
 #### CheckboxConditionalTagHelper
 
-```
+```razor
 <nhsuk-checkboxes contains-conditional>
   <nhsuk-checkbox asp-for="FieldName" label="Option 1" value="@("Option 1")"></nhsuk-radio>
   <nhsuk-checkbox asp-for="FieldName" label="Option 2" value="@("Option 2")"></nhsuk-radio>
@@ -88,7 +88,7 @@ In `_ViewImports.cshtml` add `@addTagHelper *, SamNHS.NHSUKFrontend.Razor`
 
 #### FieldsetLegendTagHelper
 
-```
+```razor
 <nhsuk-fieldset>
   <nhsuk-fieldset-legend>...</nhsuk-fieldset-legend>
 </nhsuk-fieldset>
@@ -122,7 +122,7 @@ In `_ViewImports.cshtml` add `@addTagHelper *, SamNHS.NHSUKFrontend.Razor`
 
 #### RadioConditionalTagHelper
 
-```
+```razor
 <nhsuk-radios contains-conditional>
   <nhsuk-radio asp-for="FieldName" label="Option 1" value="@("Option 1")"></nhsuk-radio>
   <nhsuk-radio asp-for="FieldName" label="Option 2" value="@("Option 2")"></nhsuk-radio>
@@ -149,7 +149,7 @@ In `_ViewImports.cshtml` add `@addTagHelper *, SamNHS.NHSUKFrontend.Razor`
 
 #### HeaderViewComponent
 
-```
+```razor
 @{
     var headerProperties = new HeaderProperties
     {
@@ -165,17 +165,17 @@ In `_ViewImports.cshtml` add `@addTagHelper *, SamNHS.NHSUKFrontend.Razor`
 ```
 
 In page `<body>`:
-```
+```razor
   <vc:header properties="@headerProperties"></vc:header>
 ```
 
 #### FooterViewComponent
 
-```
+```razor
 @{
     var footerProperties = new FooterProperties
     {
-        Copyright = "ï¿½ 2021 NHS North East Lincolnshire",
+        Copyright = "© 2021 NHS North East Lincolnshire",
         Links = new Link[]
         {
             new Link { Label = "Privacy", Url = Url.Action("Privacy", "Home") }
@@ -185,6 +185,6 @@ In page `<body>`:
 ```
 
 In page `<body>`:
-```
+```razor
   <vc:footer properties="@footerProperties"></vc:footer>
 ```
