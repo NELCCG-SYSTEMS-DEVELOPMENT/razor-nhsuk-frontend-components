@@ -64,8 +64,8 @@ In `_ViewImports.cshtml` add `@addTagHelper *, NELCCG.NHSUKFrontend.Razor`
 
 ```razor
 <nhsuk-checkboxes contains-conditional>
-  <nhsuk-checkbox asp-for="FieldName" label="Option 1" value="@("Option 1")"></nhsuk-radio>
-  <nhsuk-checkbox asp-for="FieldName" label="Option 2" value="@("Option 2")"></nhsuk-radio>
+  <nhsuk-checkbox asp-for="FieldName" label="Option 1" value="@("Option 1")"></nhsuk-checkbox>
+  <nhsuk-checkbox asp-for="FieldName" label="Option 2" value="@("Option 2")"></nhsuk-checkbox>
   <nhsuk-checkbox asp-for="FieldName" label="Other" aria-controls="conditional"></nhsuk-checkbox>
   <nhsuk-checkbox-conditional hidden="@(Model?.FieldName != "Other")" id="conditional">
     ...
