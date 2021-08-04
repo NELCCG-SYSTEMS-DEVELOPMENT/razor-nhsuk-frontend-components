@@ -53,6 +53,7 @@
                 <nhsuk-radio asp-for="FavouriteColour" label="Red" value="@("Red")"></nhsuk-radio>
                 <nhsuk-radio asp-for="FavouriteColour" label="Green" value="@("Green")"></nhsuk-radio>
                 <nhsuk-radio asp-for="FavouriteColour" label="Blue" value="@("Blue")"></nhsuk-radio>
+                <nhsuk-radio-divider><span>or</span></nhsuk-radio-divider>
                 <nhsuk-radio asp-for="FavouriteColour" label="Other" value="@("Other")" aria-controls="favourite_colour_other"></nhsuk-radio>
                 <nhsuk-radio-conditional id="favourite_colour_other" hidden="@(Model?.FavouriteColour != "Other")">
                     <nhsuk-input asp-for="FavouriteColourOther">
