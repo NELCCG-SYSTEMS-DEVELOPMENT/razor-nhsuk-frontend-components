@@ -10,6 +10,7 @@
     public class RadiosTagHelper : ElementTagHelperBase
     {
         public bool ContainsConditional { get; set; }
+        public bool Inline { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
@@ -17,6 +18,12 @@
 
             output.TagName = "div";
             output.AddClass("nhsuk-radios", HtmlEncoder.Default);
+
+            if (this.Inline)
+            {
+                output.AddClass("nhsuk-radios--inline", HtmlEncoder.Default);
+            }
+
             if (this.ContainsConditional)
             {
                 output.AddClass("nhsuk-radios--conditional", HtmlEncoder.Default);
