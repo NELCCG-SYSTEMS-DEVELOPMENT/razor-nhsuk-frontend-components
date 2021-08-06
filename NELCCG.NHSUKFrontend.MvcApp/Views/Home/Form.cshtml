@@ -8,14 +8,12 @@
 }
 
 @section PreContent {
-    <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-        <div class="nhsuk-width-container">
-            <ol class="nhsuk-breadcrumb__list">
-                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" asp-action="Index">Home</a></li>
-            </ol>
-            <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" asp-action="Index">Go home</a></p>
-        </div>
-    </nav>
+    <nhsuk-breadcrumb>
+        <nhsuk-breadcrumb-list>
+            <a nhsuk-breadcrumb-item asp-action="Index">Home</a>
+        </nhsuk-breadcrumb-list>
+        <a nhsuk-breadcrumb-backlink asp-action="Index">Go Home</a>
+    </nhsuk-breadcrumb>
 }
 
 <form method="post">
@@ -36,6 +34,8 @@
             </div>
         </nhsuk-form-group>
     </nhsuk-fieldset>
+
+
 
     <nhsuk-fieldset>
         <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your date of birth?</nhsuk-fieldset-legend>
