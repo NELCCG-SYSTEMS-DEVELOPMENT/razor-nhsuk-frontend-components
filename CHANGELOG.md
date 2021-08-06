@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.1.1...v1.2.0) (2021-08-06)
+
+
+### Features
+
+* add inline modifier to radios ([34e5231](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/34e5231ec7b54ccacc1cae3139a3c9a8bf71e518))
+* add tag helpers for breadcrumbs ([477dc71](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/477dc71378e41991ef58fb470879f02bd26703c0))
+
+
+### Bug Fixes
+
+* closing tag for autocomplete container ([f0b0fe8](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/f0b0fe89ca06dabcf965d1aaf167da28236ae803))
+
 ## [1.1.2](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.1.1...v1.1.2) (2021-08-04)
 
 
