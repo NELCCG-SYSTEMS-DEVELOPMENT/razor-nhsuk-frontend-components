@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.1](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.2.0...v1.2.1) (2021-08-06)
+
+
+### Bug Fixes
+
+* update version number on project ([0617030](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/0617030b7f078425738807b3ee96aa278e05c9ca))
+
 ## [1.2.0](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.1.1...v1.2.0) (2021-08-06)
 
 
