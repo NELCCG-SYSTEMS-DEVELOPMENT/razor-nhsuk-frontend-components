@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.2.0...v1.3.0) (2021-08-09)
+
+
+### Features
+
+* add card tag helper ([70758ab](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/70758abd9a0c68bc883cbe6a676fe835dfa745e4))
+
+
+### Bug Fixes
+
+* update version number on project ([0617030](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/0617030b7f078425738807b3ee96aa278e05c9ca))
+
 ## [1.2.1](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.2.0...v1.2.1) (2021-08-06)
 
 
