@@ -85,7 +85,7 @@ In `_ViewImports.cshtml` add `@addTagHelper *, NELCCG.NHSUKFrontend.Razor`
 <nhsuk-card heading="Clickable card" clickable href="#"
             description="This card is clickable"></nhsuk-card>
 
-<nhsuk-card heading="Feature card" feature href="#"
+<nhsuk-card heading="Feature card" feature
             description="This is a feature card"></nhsuk-card>
 ```
 
