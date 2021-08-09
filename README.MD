@@ -68,6 +68,27 @@ In `_ViewImports.cshtml` add `@addTagHelper *, NELCCG.NHSUKFrontend.Razor`
 
   `<nhsuk-button>Submit</nhsuk-button>`
 
+#### CardTagHelper
+
+```razor
+<nhsuk-card heading="Encoded description and <em>heading</em>"
+            encode-heading
+            description="This is <script>alert('hi')</script> unsafe content"
+            encode-description></nhsuk-card>
+
+<nhsuk-card heading="Unencoded description <em>and</em> heading" heading-classes="@(new[] { "class-1", "class-2" })"
+            description="This is <strong>safe</strong> content. Custom heading classes are applied."></nhsuk-card>
+
+<nhsuk-card heading="Card with image" image-url="https://placekitten.com/g/970/450"
+            description="This card has an image. Source: <a href='https://placekitten.com/'>placekitten.com</a>"></nhsuk-card>
+
+<nhsuk-card heading="Clickable card" clickable href="#"
+            description="This card is clickable"></nhsuk-card>
+
+<nhsuk-card heading="Feature card" feature href="#"
+            description="This is a feature card"></nhsuk-card>
+```
+
 #### CheckboxTagHelper
 
   `<nhsuk-checkbox asp-for="FieldName"></nhsuk-checkbox>`
