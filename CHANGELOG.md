@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.1](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.3.0...v1.3.1) (2021-08-09)
+
+
+### Bug Fixes
+
+* card href starting with `#` are now valid ([77b826c](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/77b826c4767d6eef4b85993227a7e4f5c70f5532))
+
 ## [1.3.0](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.2.0...v1.3.0) (2021-08-09)
 
 
