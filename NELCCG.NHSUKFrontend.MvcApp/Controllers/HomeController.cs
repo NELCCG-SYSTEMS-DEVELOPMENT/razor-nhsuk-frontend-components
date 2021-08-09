@@ -22,24 +22,6 @@
             return View();
         }
 
-        public IActionResult Form(User model)
-        {
-            if (this.Request.Method == "GET")
-            {
-                model.Biography = "This is line 1\nThis is line 2\t\tThis is tabbed";
-                model.FavouriteColour = "Other";
-                model.FavouriteColourOther = "Purple";
-                model.Nationality = new List<string> { "british", "other" };
-            }
-            
-            if (this.Request.Method == "POST")
-            {
-                DateInputHelper.UpdateFromFormRequest(model, this.Request);
-            }
-
-            return View(model);
-        }
-
         public IActionResult SvgIcons()
         {
             return View();
