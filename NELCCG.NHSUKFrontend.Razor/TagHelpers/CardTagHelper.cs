@@ -118,7 +118,7 @@
                     
                     if (!string.IsNullOrWhiteSpace(this.Href) && !this.Feature)
                     {
-                        if (!Uri.IsWellFormedUriString(this.Href, UriKind.RelativeOrAbsolute))
+                        if (!this.Href.StartsWith("#") && !Uri.IsWellFormedUriString(this.Href, UriKind.RelativeOrAbsolute))
                         {
                             throw new FormatException("Invalid format for Href");
                         }
