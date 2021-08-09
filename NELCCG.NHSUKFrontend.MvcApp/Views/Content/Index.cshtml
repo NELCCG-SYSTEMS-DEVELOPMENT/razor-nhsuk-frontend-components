@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = ViewData["HeroTitle"] = "Content";
+}
+@section PreContent {
+    <nhsuk-breadcrumb>
+        <nhsuk-breadcrumb-list>
+            <a nhsuk-breadcrumb-item asp-controller="Home">Home</a>
+        </nhsuk-breadcrumb-list>
+        <a nhsuk-breadcrumb-backlink asp-controller="Home">Go Home</a>
+    </nhsuk-breadcrumb>
+}
+<ul>
+    <li>
+        <a asp-action="CareCard">Care Card</a>
+    </li>
+</ul>

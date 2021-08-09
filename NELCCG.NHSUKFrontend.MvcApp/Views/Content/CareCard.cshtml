@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = ViewData["HeadingTitle"] = "Card";
+}
+
+@section Head {
+    <style>
+        .open-q { background: #eee;}
+        .open-q .nhsuk-care-card__content::before {
+            color: red;
+            font-size: 2.5em;
+            content: "┌ ";
+            position: absolute;
+            margin-top: -1em;
+            margin-left: -0.8em;
+        }
+
+        .close-q {
+            position: relative;
+        }
+
+            .close-q .nhsuk-care-card__content::after {
+                color: darkorange;
+                font-size: 2.5em;
+                content: " ┘";
+                position: absolute;
+                right: 0.1em;
+                bottom: -0.1em;
+            }
+    </style>
+}
+
+@section PreContent {
+    <nhsuk-breadcrumb>
+        <nhsuk-breadcrumb-list>
+            <a nhsuk-breadcrumb-item asp-controller="Home" asp-action="Index">Home</a>
+            <a nhsuk-breadcrumb-item asp-action="Index">Content</a>
+        </nhsuk-breadcrumb-list>
+        <a nhsuk-breadcrumb-backlink asp-action="Index">Back to Content</a>
+    </nhsuk-breadcrumb>
+}
+
+<nhsuk-care-card heading="Speak to a GP if:" type="NonUrgent">
+    <ul>
+        <li>Symptom one</li>
+        <li>Symptom two</li>
+        <li>Symptom three</li>
+        <li>Symptom four</li>
+    </ul>
+</nhsuk-care-card>
+
+<nhsuk-care-card heading="Ask for an urgent GP appointment if:" type="Urgent" classes="@(new[] { "open-q", "close-q" })">
+    <ul>
+        <li>Symptom one</li>
+        <li>Symptom two</li>
+        <li>Symptom three</li>
+        <li>Symptom four</li>
+    </ul>
+</nhsuk-care-card>
+
+<nhsuk-care-card heading="Call 999 if:" type="Immediate">
+    <ul>
+        <li>Symptom one</li>
+        <li>Symptom two</li>
+        <li>Symptom three</li>
+        <li>Symptom four</li>
+    </ul>
+</nhsuk-care-card>

@@ -89,6 +89,37 @@ In `_ViewImports.cshtml` add `@addTagHelper *, NELCCG.NHSUKFrontend.Razor`
             description="This is a feature card"></nhsuk-card>
 ```
 
+#### CareCardTagHelper
+
+```razor
+<nhsuk-care-card heading="Speak to a GP if:" type="NonUrgent">
+    <ul>
+        <li>Symptom one</li>
+        <li>Symptom two</li>
+        <li>Symptom three</li>
+        <li>Symptom four</li>
+    </ul>
+</nhsuk-care-card>
+
+<nhsuk-care-card heading="Ask for an urgent GP appointment if:" type="Urgent" classes="@(new[] { "open-q", "close-q" })">
+    <ul>
+        <li>Symptom one</li>
+        <li>Symptom two</li>
+        <li>Symptom three</li>
+        <li>Symptom four</li>
+    </ul>
+</nhsuk-care-card>
+
+<nhsuk-care-card heading="Call 999 if:" type="Immediate">
+    <ul>
+        <li>Symptom one</li>
+        <li>Symptom two</li>
+        <li>Symptom three</li>
+        <li>Symptom four</li>
+    </ul>
+</nhsuk-care-card>
+```
+
 #### CheckboxTagHelper
 
   `<nhsuk-checkbox asp-for="FieldName"></nhsuk-checkbox>`
