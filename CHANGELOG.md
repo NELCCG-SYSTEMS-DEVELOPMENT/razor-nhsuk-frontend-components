@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.4.0...v1.5.0) (2021-08-10)
+
+
+### Features
+
+* add contents list tag helpers ([aa3bb7f](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/aa3bb7f354b75b9ea5017ef2a710a8d719af6b27))
+* add details tag helper ([e79c65f](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/e79c65f33606046cf2935b48f8f170a6fe07d69a))
+* add do and don't list tag helpers ([e231180](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/e231180f83d556a40f25f88f734d7d6dea5c4e17))
+* add error summary tag helpers ([8ad4c3c](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/8ad4c3c62c7fd4086a5177db79aef90fe7ee9704))
+* add input error boolean to form inputs. ([0083bcc](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/0083bcc66b3e55fc12329aa1a5d89852b3f80322))
+
+
+### Bug Fixes
+
+* don't override user set id's for form inputs ([40f2e10](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/40f2e10f53eabad85eb6107d66e91d7b77fce916))
+
 ## [1.4.0](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.3.1...v1.4.0) (2021-08-09)
 
 
