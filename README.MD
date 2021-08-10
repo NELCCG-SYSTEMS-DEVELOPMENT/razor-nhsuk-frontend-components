@@ -171,6 +171,23 @@ In `_ViewImports.cshtml` add `@addTagHelper *, NELCCG.NHSUKFrontend.Razor`
 </nhsuk-details>
 ```
 
+#### DoDontListTagHelper, DoDontListItemTagHelper
+
+```razor
+<nhsuk-do-dont-list type="Do">
+    <nhsuk-do-dont-list-item>cover blisters that are likely to burst with a soft plaster or dressing</nhsuk-do-dont-list-item>
+    <nhsuk-do-dont-list-item>wash your hands before touching a burst blister</nhsuk-do-dont-list-item>
+    <nhsuk-do-dont-list-item>allow the fluid in a burst blister to drain before covering it with a plaster or dressing</nhsuk-do-dont-list-item>
+</nhsuk-do-dont-list>
+
+<nhsuk-do-dont-list type="Dont">
+    <nhsuk-do-dont-list-item>burst a blister yourself</nhsuk-do-dont-list-item>
+    <nhsuk-do-dont-list-item>peel the skin off a burst blister</nhsuk-do-dont-list-item>
+    <nhsuk-do-dont-list-item hide-prefix>do not pick at the edges of the remaining skin</nhsuk-do-dont-list-item>
+    <nhsuk-do-dont-list-item>wear the shoes or use the equipment that caused your blister until it heals</nhsuk-do-dont-list-item>
+</nhsuk-do-dont-list>
+```
+
 #### ErrorMessageTagHelper
 
   `<nhsuk-error-message>Message</nhsuk-error-message>`

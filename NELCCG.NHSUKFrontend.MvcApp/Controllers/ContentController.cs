@@ -19,5 +19,10 @@
             return View();
         }
 
+        public IActionResult DoDontLists()
+        {
+            return View();
+        }
+
     }
 }
