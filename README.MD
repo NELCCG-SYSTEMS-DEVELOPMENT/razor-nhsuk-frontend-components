@@ -192,6 +192,24 @@ In `_ViewImports.cshtml` add `@addTagHelper *, NELCCG.NHSUKFrontend.Razor`
 
   `<nhsuk-error-message>Message</nhsuk-error-message>`
 
+#### ErrorSummaryTagHelper, ErrorSummaryListItemTagHelper
+
+```razor
+@if (hasErrors)
+{
+    <nhsuk-error-summary description="The following errors need correcting">
+        @if (emptySurname)
+        {
+            <nhsuk-error-summary-list-item href="#Surname">Surname is required</nhsuk-error-summary-list-item>
+        }
+        @if (invalidDoB)
+        {
+            <nhsuk-error-summary-list-item href="#DateOfBirth__Day">Date of birth must be in the past</nhsuk-error-summary-list-item>
+        }
+    </nhsuk-error-summary>
+}
+```
+
 #### FieldsetTagHelper
 
   `<nhsuk-fieldset>...</nhsuk-fieldset>`

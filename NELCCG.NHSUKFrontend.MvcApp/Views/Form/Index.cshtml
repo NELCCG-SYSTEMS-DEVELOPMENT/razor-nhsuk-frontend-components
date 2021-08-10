@@ -5,6 +5,10 @@
 @{
     ViewData["Title"] = ViewData["HeroTitle"] = "Form Elements";
     ViewData["HeroMessage"] = "This is an example of using the tag helpers and the date input helper.";
+
+    var invalidDoB = Model?.DateOfBirth > DateTime.Now;
+    var emptySurname = string.IsNullOrWhiteSpace(Model?.Surname);
+    var hasErrors = invalidDoB || emptySurname;
 }
 
 @section PreContent {
@@ -17,9 +21,27 @@
 }
 
 <form method="post">
+    @if (hasErrors)
+    {
+        <nhsuk-error-summary description="The following errors need correcting">
+            @if (emptySurname)
+            {
+                <nhsuk-error-summary-list-item href="#Surname">Surname is required</nhsuk-error-summary-list-item>
+            }
+            @if (invalidDoB)
+            {
+                <nhsuk-error-summary-list-item href="#DateOfBirth__Day">Date of birth must be in the past</nhsuk-error-summary-list-item>
+            }
+        </nhsuk-error-summary>
+    }
+
     <nhsuk-fieldset>
         <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your name?</nhsuk-fieldset-legend>
-        <nhsuk-form-group>
+        <nhsuk-form-group contains-error-message="@emptySurname">
+            @if (emptySurname)
+            {
+                <nhsuk-error-message>Surname is required</nhsuk-error-message>
+            }
             <div class="nhsuk-grid-row">
                 <div class="nhsuk-grid-column-one-half">
                     <nhsuk-input asp-for="GivenName">
@@ -27,7 +49,7 @@
                     </nhsuk-input>
                 </div>
                 <div class="nhsuk-grid-column-one-half">
-                    <nhsuk-input asp-for="Surname">
+                    <nhsuk-input id="Surname" input-error="@emptySurname" asp-for="Surname">
                         <nhsuk-label asp-for="Surname"></nhsuk-label>
                     </nhsuk-input>
                 </div>
@@ -36,12 +58,15 @@
     </nhsuk-fieldset>
 
 
-
     <nhsuk-fieldset>
         <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your date of birth?</nhsuk-fieldset-legend>
-        <nhsuk-form-group>
-            <nhsuk-date-input asp-for="DateOfBirth">
+        <nhsuk-form-group contains-error-message="@invalidDoB">
+            <nhsuk-date-input input-error="@invalidDoB" id="DateOfBirth" asp-for="DateOfBirth">
                 <nhsuk-label asp-for="DateOfBirth" label-is-visually-hidden></nhsuk-label>
+                @if (invalidDoB)
+                {
+                    <nhsuk-error-message>Date of birth must be in the past</nhsuk-error-message>
+                }
             </nhsuk-date-input>
         </nhsuk-form-group>
     </nhsuk-fieldset>
