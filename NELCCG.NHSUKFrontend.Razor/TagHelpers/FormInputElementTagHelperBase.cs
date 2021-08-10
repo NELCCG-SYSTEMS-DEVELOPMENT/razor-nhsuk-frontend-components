@@ -18,6 +18,7 @@
         public bool ReadOnly { get; set; }
         public bool Required { get; set; }
         public object Value { get; set; }
+        public bool InputError { get; set; }
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             base.Process(context, output);
@@ -81,6 +82,16 @@
                 context.Items.Add("input-required", true);
                 output.Attributes.SetAttribute("data-required", "true");
             }
+
+            if (this.InputError)
+            {
+                this.SetInputErrorClass(context, output);
+            }
+        }
+
+        public virtual void SetInputErrorClass(TagHelperContext context, TagHelperOutput output)
+        {
+            output.Attributes.SetAttribute("class", "nhsuk-input--error");
         }
 
         public virtual void SetModelValue(object value)

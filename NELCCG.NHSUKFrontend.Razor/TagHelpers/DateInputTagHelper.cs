@@ -15,6 +15,9 @@
         public int? DateDay { get; set; }
         public int? DateMonth { get; set; }
         public int? DateYear { get; set; }
+        /// <summary>
+        /// Highlight any invalid date components.
+        /// </summary>
         public bool IndicateInvalid { get; set; }
 
         private enum InputType
@@ -121,12 +124,17 @@
 
             input.Attributes.TryGetValue("value", out string value);
 
-            if (this.IndicateInvalid && !ValidValue(inputType, value))
+            if (this.InputError || this.IndicateInvalid && !ValidValue(inputType, value))
             {
                 input.AddCssClass("nhsuk-input--error");
             }
 
             return dateInputItem;
+        }
+
+        public override void SetInputErrorClass(TagHelperContext context, TagHelperOutput output)
+        {
+            // don't set class on default output
         }
 
         private bool ValidValue(InputType inputType, string value)
