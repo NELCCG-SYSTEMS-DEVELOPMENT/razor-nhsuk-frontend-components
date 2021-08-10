@@ -37,8 +37,12 @@
                     }
                 }
 
-                this.Id = IdGenerator.GenerateId($"{this.For.Name.Replace(".", "_")}__");
-                output.Attributes.SetAttribute("id", this.Id);
+                if (!this.UserSetId)
+                {
+                    this.Id = IdGenerator.GenerateId($"{this.For.Name.Replace(".", "_")}__");
+                    output.Attributes.SetAttribute("id", this.Id);
+                }
+                
                 this.Name = this.For.Name;
                 this.SetModelValue(value);
             }
