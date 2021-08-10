@@ -1,12 +1,14 @@
 ﻿@{
-    ViewData["Title"] = ViewData["HeroTitle"] = "Navigation";
+    ViewData["Title"] = ViewData["HeroTitle"] = "Contents List";
 }
+
 @section PreContent {
     <nhsuk-breadcrumb>
         <nhsuk-breadcrumb-list>
-            <a nhsuk-breadcrumb-item asp-controller="Home">Home</a>
+            <a nhsuk-breadcrumb-item asp-controller="Home" asp-action="Index">Home</a>
+            <a nhsuk-breadcrumb-item asp-action="Index">Navigation</a>
         </nhsuk-breadcrumb-list>
-        <a nhsuk-breadcrumb-backlink asp-controller="Home">Go Home</a>
+        <a nhsuk-breadcrumb-backlink asp-action="Index">Back to Navigation</a>
     </nhsuk-breadcrumb>
 }
 
@@ -14,10 +16,10 @@
     <div class="nhsuk-grid-column-one-quarter">
         <nhsuk-contents-list>
             <nhsuk-contents-list-item text="Card" href="@Url.Action("Card")"></nhsuk-contents-list-item>
-            <nhsuk-contents-list-item text="Contents List" href="@Url.Action("ContentsList")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Contents List" current></nhsuk-contents-list-item>
         </nhsuk-contents-list>
     </div>
     <div class="nhsuk-grid-column-three-quarters">
-        Please select a page in the navigation menu.
+        Currently used in this and related pages.
     </div>
 </div>

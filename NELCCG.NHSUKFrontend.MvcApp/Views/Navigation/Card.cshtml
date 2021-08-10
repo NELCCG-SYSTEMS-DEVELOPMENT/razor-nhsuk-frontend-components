@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = ViewData["HeadingTitle"] = "Card";
+    ViewData["Title"] = ViewData["HeroTitle"] = "Card";
 }
 
 @section Head {
@@ -30,19 +30,30 @@
     </nhsuk-breadcrumb>
 }
 
-<nhsuk-card heading="Encoded description and <em>heading</em>"
-            encode-heading
-            description="This is <script>alert('hi')</script> unsafe content"
-            encode-description></nhsuk-card>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+        <nhsuk-contents-list>
+            <nhsuk-contents-list-item text="Card" current></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Contents List"  href="@Url.Action("ContentsList")"></nhsuk-contents-list-item>
+        </nhsuk-contents-list>
+    </div>
+    <div class="nhsuk-grid-column-three-quarters">
+        <nhsuk-card heading="Encoded description and <em>heading</em>"
+                    encode-heading
+                    description="This is <script>alert('hi')</script> unsafe content"
+                    encode-description></nhsuk-card>
 
-<nhsuk-card heading="Unencoded description <em>and</em> heading" heading-classes="@(new[] { "class-1", "class-2" })"
-            description="This is <strong>safe</strong> content. Custom heading classes are applied."></nhsuk-card>
+        <nhsuk-card heading="Unencoded description <em>and</em> heading" heading-classes="@(new[] { "class-1", "class-2" })"
+                    description="This is <strong>safe</strong> content. Custom heading classes are applied."></nhsuk-card>
 
-<nhsuk-card heading="Card with image" image-url="https://placekitten.com/g/970/450"
-            description="This card has an image. Source: <a href='https://placekitten.com/'>placekitten.com</a>"></nhsuk-card>
+        <nhsuk-card heading="Card with image" image-url="https://placekitten.com/g/970/450"
+                    description="This card has an image. Source: <a href='https://placekitten.com/'>placekitten.com</a>"></nhsuk-card>
 
-<nhsuk-card heading="Clickable card" clickable href="#"
-            description="This card is clickable"></nhsuk-card>
+        <nhsuk-card heading="Clickable card" clickable href="#maincontent"
+                    description="This card is clickable"></nhsuk-card>
 
-<nhsuk-card heading="Feature card" feature href="#"
-            description="This is a feature card"></nhsuk-card>
+        <nhsuk-card heading="Feature card" feature
+                    description="This is a feature card"></nhsuk-card>
+
+    </div>
+</div>
