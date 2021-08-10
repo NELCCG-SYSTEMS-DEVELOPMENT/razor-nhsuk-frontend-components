@@ -39,29 +39,39 @@
     </nhsuk-breadcrumb>
 }
 
-<nhsuk-care-card heading="Speak to a GP if:" type="NonUrgent">
-    <ul>
-        <li>Symptom one</li>
-        <li>Symptom two</li>
-        <li>Symptom three</li>
-        <li>Symptom four</li>
-    </ul>
-</nhsuk-care-card>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+        <nhsuk-contents-list>
+            <nhsuk-contents-list-item text="Care Card" current></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Details / Expander" href="@Url.Action("Details")"></nhsuk-contents-list-item>
+        </nhsuk-contents-list>
+    </div>
+    <div class="nhsuk-grid-column-three-quarters">
+        <nhsuk-care-card heading="Speak to a GP if:" type="NonUrgent">
+            <ul>
+                <li>Symptom one</li>
+                <li>Symptom two</li>
+                <li>Symptom three</li>
+                <li>Symptom four</li>
+            </ul>
+        </nhsuk-care-card>
 
-<nhsuk-care-card heading="Ask for an urgent GP appointment if:" type="Urgent" classes="@(new[] { "open-q", "close-q" })">
-    <ul>
-        <li>Symptom one</li>
-        <li>Symptom two</li>
-        <li>Symptom three</li>
-        <li>Symptom four</li>
-    </ul>
-</nhsuk-care-card>
+        <nhsuk-care-card heading="Ask for an urgent GP appointment if:" type="Urgent" classes="@(new[] { "open-q", "close-q" })">
+            <ul>
+                <li>Symptom one</li>
+                <li>Symptom two</li>
+                <li>Symptom three</li>
+                <li>Symptom four</li>
+            </ul>
+        </nhsuk-care-card>
 
-<nhsuk-care-card heading="Call 999 if:" type="Immediate">
-    <ul>
-        <li>Symptom one</li>
-        <li>Symptom two</li>
-        <li>Symptom three</li>
-        <li>Symptom four</li>
-    </ul>
-</nhsuk-care-card>
+        <nhsuk-care-card heading="Call 999 if:" type="Immediate">
+            <ul>
+                <li>Symptom one</li>
+                <li>Symptom two</li>
+                <li>Symptom three</li>
+                <li>Symptom four</li>
+            </ul>
+        </nhsuk-care-card>
+    </div>
+</div>

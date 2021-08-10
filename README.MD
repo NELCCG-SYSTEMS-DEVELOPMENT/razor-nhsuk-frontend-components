@@ -155,6 +155,22 @@ In `_ViewImports.cshtml` add `@addTagHelper *, NELCCG.NHSUKFrontend.Razor`
 
   `<nhsuk-date-input asp-for="DateField"></nhsuk-date-input>`
 
+#### DetailsTagHelper
+
+```razor
+<nhsuk-details summary="Details hidden">
+    <p>Details go here</p>
+</nhsuk-details>
+
+<nhsuk-details summary="Details shown" open>
+    <p>Details go here</p>
+</nhsuk-details>
+
+<nhsuk-details summary="Styled as expander" expander>
+    <p>Details go here</p>
+</nhsuk-details>
+```
+
 #### ErrorMessageTagHelper
 
   `<nhsuk-error-message>Message</nhsuk-error-message>`

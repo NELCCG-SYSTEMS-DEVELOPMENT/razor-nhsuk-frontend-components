@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = ViewData["HeroTitle"] = "Details / Expander";
+}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+        <nhsuk-contents-list>
+            <nhsuk-contents-list-item text="Care Card" href="@Url.Action("CareCard")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Details / Expander" current></nhsuk-contents-list-item>
+        </nhsuk-contents-list>
+    </div>
+    <div class="nhsuk-grid-column-three-quarters">
+        <nhsuk-details summary="Details hidden">
+            <p>Details go here</p>
+        </nhsuk-details>
+
+        <nhsuk-details summary="Details shown" open>
+            <p>Details go here</p>
+        </nhsuk-details>
+
+        <nhsuk-details summary="Styled as expander" expander>
+            <p>Details go here</p>
+        </nhsuk-details>
+    </div>
+</div>

@@ -9,8 +9,14 @@
         <a nhsuk-breadcrumb-backlink asp-controller="Home">Go Home</a>
     </nhsuk-breadcrumb>
 }
-<ul>
-    <li>
-        <a asp-action="CareCard">Care Card</a>
-    </li>
-</ul>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+        <nhsuk-contents-list>
+            <nhsuk-contents-list-item text="Care Card" href="@Url.Action("CareCard")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Details / Expander" href="@Url.Action("Details")"></nhsuk-contents-list-item>
+        </nhsuk-contents-list>
+    </div>
+    <div class="nhsuk-grid-column-three-quarters">
+        Please select a page in the navigation menu.
+    </div>
+</div>
