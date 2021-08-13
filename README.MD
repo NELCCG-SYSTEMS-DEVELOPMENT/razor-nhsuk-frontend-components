@@ -236,6 +236,16 @@ In `_ViewImports.cshtml` add `@addTagHelper *, NELCCG.NHSUKFrontend.Razor`
   Generate script tag for frontend JS   
   `<script nhsuk-frontend-version="Version__5_1_0"></script>`
 
+#### HeroTagHelper
+
+```razor
+<nhsuk-hero image-url="path/to/image.png"></nhsuk-hero>
+<nhsuk-hero heading="Hero heading"></nhsuk-hero>
+<nhsuk-hero heading="Hero heading and text" text="Hero text"></nhsuk-hero>
+<nhsuk-hero heading="Hero heading and image" image-url="path/to/image.png"></nhsuk-hero>
+<nhsuk-hero heading="Hero heading, text and image" text="Hero text" image-url="path/to/image.png"></nhsuk-hero>
+```
+
 #### HintTagHelper
 
   `<nhsuk-hint>...</nhsuk-hint>`
