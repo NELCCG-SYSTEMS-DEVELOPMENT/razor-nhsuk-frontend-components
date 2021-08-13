@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.5.0...v1.6.0) (2021-08-13)
+
+
+### Features
+
+* add hero tag helper ([2517b7f](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/2517b7f4eba2c5ea9c955b4d778d4a54ab8a9ee0))
+
 ## [1.5.0](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.4.0...v1.5.0) (2021-08-10)
 
 
