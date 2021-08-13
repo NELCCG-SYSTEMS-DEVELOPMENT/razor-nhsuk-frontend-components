@@ -16,36 +16,48 @@
     </nhsuk-breadcrumb>
 }
 
-<form asp-action="Hero">
-    <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>
-            Updating the details in this form will add a hero to the top of the page.
-            <strong>Known issue:</strong> adding an image and heading will partially hide the breadcrumb, on GitHub as
-            <a href="https://github.com/nhsuk/nhsuk-frontend/issues/431" rel="external">Hero image with image, heading and content margin (#431)</a>
-        </p>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+        <nhsuk-contents-list>
+            <nhsuk-contents-list-item text="Care Card" href="@Url.Action("CareCard")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Details / Expander" href="@Url.Action("Details")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Do and Don't Lists" href="@Url.Action("DoDontLists")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Hero" current></nhsuk-contents-list-item>
+        </nhsuk-contents-list>
     </div>
-    <nhsuk-fieldset>
-        <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">Hero component properties</nhsuk-fieldset-legend>
-        <nhsuk-form-group>
-            <nhsuk-input asp-for="HeroTitle">
-                <nhsuk-label asp-for="HeroTitle"></nhsuk-label>
-            </nhsuk-input>
-        </nhsuk-form-group>
-        <nhsuk-form-group>
-            <nhsuk-input asp-for="HeroMessage">
-                <nhsuk-label asp-for="HeroMessage"></nhsuk-label>
-            </nhsuk-input>
-        </nhsuk-form-group>
-        <nhsuk-form-group>
-            <nhsuk-input asp-for="HeroImage">
-                <nhsuk-label asp-for="HeroImage"></nhsuk-label>
-                <nhsuk-hint>Example: https://placekitten.com/g/1200/320 </nhsuk-hint>
-            </nhsuk-input>
-        </nhsuk-form-group>
-    </nhsuk-fieldset>
+    <div class="nhsuk-grid-column-three-quarters">
+        <form asp-action="Hero">
+            <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>
+                    Updating the details in this form will add a hero to the top of the page.
+                    <strong>Known issue:</strong> adding an image and heading will partially hide the breadcrumb, on GitHub as
+                    <a href="https://github.com/nhsuk/nhsuk-frontend/issues/431" rel="external">Hero image with image, heading and content margin (#431)</a>
+                </p>
+            </div>
+            <nhsuk-fieldset>
+                <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">Hero component properties</nhsuk-fieldset-legend>
+                <nhsuk-form-group>
+                    <nhsuk-input asp-for="HeroTitle">
+                        <nhsuk-label asp-for="HeroTitle"></nhsuk-label>
+                    </nhsuk-input>
+                </nhsuk-form-group>
+                <nhsuk-form-group>
+                    <nhsuk-input asp-for="HeroMessage">
+                        <nhsuk-label asp-for="HeroMessage"></nhsuk-label>
+                    </nhsuk-input>
+                </nhsuk-form-group>
+                <nhsuk-form-group>
+                    <nhsuk-input asp-for="HeroImage">
+                        <nhsuk-label asp-for="HeroImage"></nhsuk-label>
+                        <nhsuk-hint>Example: https://placekitten.com/g/1200/320 </nhsuk-hint>
+                    </nhsuk-input>
+                </nhsuk-form-group>
+            </nhsuk-fieldset>
 
-    <nhsuk-button type="Submit">
-        Change Hero
-    </nhsuk-button>
-</form>
+            <nhsuk-button type="Submit">
+                Change Hero
+            </nhsuk-button>
+        </form>
+    </div>
+</div>
