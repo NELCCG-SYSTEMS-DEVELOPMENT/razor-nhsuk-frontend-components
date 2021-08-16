@@ -40,5 +40,10 @@
             return View();
         }
 
+        public IActionResult InsetText()
+        {
+            return View();
+        }
+
     }
 }

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = ViewData["HeroTitle"] = "Image";
+    ViewData["Title"] = ViewData["HeroTitle"] = "Inset text";
 }
 
 @section PreContent {
@@ -11,6 +11,7 @@
         <a nhsuk-breadcrumb-backlink asp-action="Index">Back to Content</a>
     </nhsuk-breadcrumb>
 }
+
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-quarter">
         <nhsuk-contents-list>
@@ -18,16 +19,13 @@
             <nhsuk-contents-list-item text="Details / Expander" href="@Url.Action("Details")"></nhsuk-contents-list-item>
             <nhsuk-contents-list-item text="Do and Don't Lists" href="@Url.Action("DoDontLists")"></nhsuk-contents-list-item>
             <nhsuk-contents-list-item text="Hero" href="@Url.Action("Hero")"></nhsuk-contents-list-item>
-            <nhsuk-contents-list-item text="Image" current></nhsuk-contents-list-item>
-            <nhsuk-contents-list-item text="Inset text" href="@Url.Action("InsetText")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Image" href="@Url.Action("Image")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Inset text" current></nhsuk-contents-list-item>
         </nhsuk-contents-list>
     </div>
     <div class="nhsuk-grid-column-three-quarters">
-        <nhsuk-image classes="@(new[] { "nhsuk-u-margin-top-0" })" src="https://placekitten.com/600/300" caption="Image caption" />
-
-        <nhsuk-image src="https://placehold.co/320x150/333333/fff?text=small"
-                     sizes="(min-width: 1020px) 320px, (min-width: 768px) 50vw, 100vw"
-                     srcset="https://placehold.co/640x300/333333/fff?text=medium 640w, https://placehold.co/800x375/333333/fff?text=large 800w"
-                     caption="<code>srcset</code> test. Resize or use responsive mode to see the different images" />
+        <nhsuk-inset-text classes="@(new[] { "nhsuk-u-margin-top-0" })">
+            <p>The <a href="https://service-manual.nhs.uk/" rel="external">NHS Digital service manual</a> has more guidance on the <a href="https://service-manual.nhs.uk/design-system/components/inset-text" rel="external">use of inset text</a></p>
+        </nhsuk-inset-text>
     </div>
 </div>
