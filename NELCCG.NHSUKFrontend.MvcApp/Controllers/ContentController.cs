@@ -35,5 +35,10 @@
             return View(model);
         }
 
+        public IActionResult Image()
+        {
+            return View();
+        }
+
     }
 }

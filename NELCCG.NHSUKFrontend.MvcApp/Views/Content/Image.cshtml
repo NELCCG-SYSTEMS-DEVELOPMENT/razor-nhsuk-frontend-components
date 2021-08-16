@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = ViewData["HeroTitle"] = "Details / Expander";
+    ViewData["Title"] = ViewData["HeroTitle"] = "Image";
 }
 
 @section PreContent {
@@ -11,28 +11,22 @@
         <a nhsuk-breadcrumb-backlink asp-action="Index">Back to Content</a>
     </nhsuk-breadcrumb>
 }
-
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-quarter">
         <nhsuk-contents-list>
             <nhsuk-contents-list-item text="Care Card" href="@Url.Action("CareCard")"></nhsuk-contents-list-item>
-            <nhsuk-contents-list-item text="Details / Expander" current></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Details / Expander" href="@Url.Action("Details")"></nhsuk-contents-list-item>
             <nhsuk-contents-list-item text="Do and Don't Lists" href="@Url.Action("DoDontLists")"></nhsuk-contents-list-item>
             <nhsuk-contents-list-item text="Hero" href="@Url.Action("Hero")"></nhsuk-contents-list-item>
-            <nhsuk-contents-list-item text="Image" href="@Url.Action("Image")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Image" current></nhsuk-contents-list-item>
         </nhsuk-contents-list>
     </div>
     <div class="nhsuk-grid-column-three-quarters">
-        <nhsuk-details summary="Details hidden">
-            <p>Details go here</p>
-        </nhsuk-details>
+        <nhsuk-image classes="@(new[] { "nhsuk-u-margin-top-0" })" src="https://placekitten.com/600/300" caption="Image caption" />
 
-        <nhsuk-details summary="Details shown" open>
-            <p>Details go here</p>
-        </nhsuk-details>
-
-        <nhsuk-details summary="Styled as expander" expander>
-            <p>Details go here</p>
-        </nhsuk-details>
+        <nhsuk-image src="https://placehold.co/320x150/333333/fff?text=small"
+                     sizes="(min-width: 1020px) 320px, (min-width: 768px) 50vw, 100vw"
+                     srcset="https://placehold.co/640x300/333333/fff?text=medium 640w, https://placehold.co/800x375/333333/fff?text=large 800w"
+                     caption="<code>srcset</code> test. Resize or use responsive mode to see the different images" />
     </div>
 </div>

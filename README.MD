@@ -226,6 +226,20 @@ In `_ViewImports.cshtml` add `@addTagHelper *, NELCCG.NHSUKFrontend.Razor`
 
   `<nhsuk-form-group>...</nhsuk-form-group>`
 
+#### FrontendImageTagHelper
+
+Inherits from built in [`ImageTagHelper`](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/image-tag-helper).
+Wraps `<img>` with `<figure>` and adds `<figcaption>`
+
+```razor
+<nhsuk-image classes="@(new[] { "nhsuk-u-margin-top-0" })" src="https://placekitten.com/600/300" caption="Image caption" />
+
+<nhsuk-image src="https://placehold.co/320x150/333333/fff?text=small"
+                sizes="(min-width: 1020px) 320px, (min-width: 768px) 50vw, 100vw"
+                srcset="https://placehold.co/640x300/333333/fff?text=medium 640w, https://placehold.co/800x375/333333/fff?text=large 800w"
+                caption="<code>srcset</code> test. Resize or use responsive mode to see the different images" />
+```
+
 #### FrontendLinkTagHelper
 
   Generate link for frontend CSS  
