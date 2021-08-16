@@ -289,6 +289,50 @@ Wraps `<img>` with `<figure>` and adds `<figcaption>`
 
   `<nhsuk-radios>...</nhsuk-radios>`
 
+#### SummaryListTagHelper
+
+Related helpers:  
+**SummaryListRowTagHelper, SummaryListRowKeyTagHelper, SummaryListRowValueTagHelper,
+SummaryListRowActionsTagHelper, SummaryListRowActionLinkTagHelper,
+SummaryListRowActionListTagHelper, SummaryListRowActionListItemTagHelper**
+
+```razor
+<nhsuk-summary-list>
+    <nhsuk-summary-list-row>
+        <nhsuk-summary-list-row-key text="Item 1"><strong>HTML content</strong> ignored</nhsuk-summary-list-row-key>
+        <nhsuk-summary-list-row-value>HTML <strong>content</strong> used as no <code>text</code> attribute set</nhsuk-summary-list-row-value>
+    </nhsuk-summary-list-row>
+    <nhsuk-summary-list-row>
+        <nhsuk-summary-list-row-key>Item <em>2</em></nhsuk-summary-list-row-key>
+        <nhsuk-summary-list-row-value text="Value set via <code>text</code> attribute"></nhsuk-summary-list-row-value>
+    </nhsuk-summary-list-row>
+</nhsuk-summary-list>
+
+<nhsuk-summary-list>
+    <nhsuk-summary-list-row>
+        <nhsuk-summary-list-row-key>Name</nhsuk-summary-list-row-key>
+        <nhsuk-summary-list-row-value text="Jo Smith"></nhsuk-summary-list-row-value>
+        <nhsuk-summary-list-row-actions>
+            <a nhsuk-summary-list-action-link hidden-text="name" href="#">Change</a>
+        </nhsuk-summary-list-row-actions>
+    </nhsuk-summary-list-row>
+    <nhsuk-summary-list-row>
+        <nhsuk-summary-list-row-key>Documents</nhsuk-summary-list-row-key>
+        <nhsuk-summary-list-row-value text="Document 1, Document 2"></nhsuk-summary-list-row-value>
+        <nhsuk-summary-list-row-actions>
+            <nhsuk-summary-list-row-action-list>
+                <nhsuk-summary-list-row-action-list-item>
+                    <a nhsuk-summary-list-action-link hidden-text="documents" href="#">Manage</a>
+                </nhsuk-summary-list-row-action-list-item>
+                <nhsuk-summary-list-row-action-list-item>
+                    <a nhsuk-summary-list-action-link hidden-text="documents" href="#">Export</a>
+                </nhsuk-summary-list-row-action-list-item>
+            </nhsuk-summary-list-row-action-list>
+        </nhsuk-summary-list-row-actions>
+    </nhsuk-summary-list-row>
+</nhsuk-summary-list>
+```
+
 #### TextAreaTagHelper
 
   `<nhsuk-textarea asp-for="FieldName"></nhsuk-textarea>`

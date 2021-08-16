@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = ViewData["HeroTitle"] = "Summary list";
+}
+
+@section PreContent {
+    <nhsuk-breadcrumb>
+        <nhsuk-breadcrumb-list>
+            <a nhsuk-breadcrumb-item asp-controller="Home" asp-action="Index">Home</a>
+            <a nhsuk-breadcrumb-item asp-action="Index">Content</a>
+        </nhsuk-breadcrumb-list>
+        <a nhsuk-breadcrumb-backlink asp-action="Index">Back to Content</a>
+    </nhsuk-breadcrumb>
+}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+        <nhsuk-contents-list>
+            <nhsuk-contents-list-item text="Care Card" href="@Url.Action("CareCard")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Details / Expander" href="@Url.Action("Details")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Do and Don't Lists" href="@Url.Action("DoDontLists")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Hero" href="@Url.Action("Hero")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Image" href="@Url.Action("Image")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Inset Text" href="@Url.Action("InsetText")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Summary list" current></nhsuk-contents-list-item>
+        </nhsuk-contents-list>
+    </div>
+    <div class="nhsuk-grid-column-three-quarters">
+        <nhsuk-summary-list>
+            <nhsuk-summary-list-row>
+                <nhsuk-summary-list-row-key text="Item 1"><strong>HTML content</strong> ignored</nhsuk-summary-list-row-key>
+                <nhsuk-summary-list-row-value>HTML <strong>content</strong> used as no <code>text</code> attribute set</nhsuk-summary-list-row-value>
+            </nhsuk-summary-list-row>
+            <nhsuk-summary-list-row>
+                <nhsuk-summary-list-row-key>Item <em>2</em></nhsuk-summary-list-row-key>
+                <nhsuk-summary-list-row-value text="Value set via <code>text</code> attribute"></nhsuk-summary-list-row-value>
+            </nhsuk-summary-list-row>
+        </nhsuk-summary-list>
+
+        <nhsuk-summary-list>
+            <nhsuk-summary-list-row>
+                <nhsuk-summary-list-row-key>Name</nhsuk-summary-list-row-key>
+                <nhsuk-summary-list-row-value text="Jo Smith"></nhsuk-summary-list-row-value>
+                <nhsuk-summary-list-row-actions>
+                    <a nhsuk-summary-list-action-link hidden-text="name" href="#">Change</a>
+                </nhsuk-summary-list-row-actions>
+            </nhsuk-summary-list-row>
+            <nhsuk-summary-list-row>
+                <nhsuk-summary-list-row-key>Documents</nhsuk-summary-list-row-key>
+                <nhsuk-summary-list-row-value text="Document 1, Document 2"></nhsuk-summary-list-row-value>
+                <nhsuk-summary-list-row-actions>
+                    <nhsuk-summary-list-row-action-list>
+                        <nhsuk-summary-list-row-action-list-item>
+                            <a nhsuk-summary-list-action-link hidden-text="documents" href="#">Manage</a>
+                        </nhsuk-summary-list-row-action-list-item>
+                        <nhsuk-summary-list-row-action-list-item>
+                            <a nhsuk-summary-list-action-link hidden-text="documents" href="#">Export</a>
+                        </nhsuk-summary-list-row-action-list-item>
+                    </nhsuk-summary-list-row-action-list>
+                </nhsuk-summary-list-row-actions>
+            </nhsuk-summary-list-row>
+        </nhsuk-summary-list>
+    </div>
+</div>

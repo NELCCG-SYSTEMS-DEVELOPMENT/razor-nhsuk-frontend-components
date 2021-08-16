@@ -45,5 +45,10 @@
             return View();
         }
 
+        public IActionResult SummaryList()
+        {
+            return View();
+        }
+
     }
 }
