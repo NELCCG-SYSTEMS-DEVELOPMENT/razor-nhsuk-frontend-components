@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.6.0...v1.7.0) (2021-08-16)
+
+
+### Features
+
+* add image tag helper ([a72ad0b](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/a72ad0b5b216c1f6f434b38076711324f8223ef0))
+* add inset text tag helper ([a3c83cb](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/a3c83cb395c85f700e159e02b46de23e1e8f9b4f))
+* add summary list tag helpers ([09aa3a3](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/09aa3a3349812d36b8e6491704421060c8472cf4))
+
 ## [1.6.0](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.5.0...v1.6.0) (2021-08-13)
 
 
