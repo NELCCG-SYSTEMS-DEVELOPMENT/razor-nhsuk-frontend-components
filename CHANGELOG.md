@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.7.0...v1.8.0) (2021-08-17)
+
+
+### Features
+
+* add list panel tag helpers ([dfc5a1f](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/dfc5a1fda43f207541162b8e73ef38aeac48e0dd))
+* add list tag helper ([1c1501a](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/1c1501ad7e2631fc5c3c3441d63c96fe39475efc))
+* add pagination tag helper ([ab6b251](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/ab6b251fc242edad4f67889cad46d1c972985cd6))
+* create A-Z tag helper ([dd8f5d1](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/commit/dd8f5d1b68356361de5ac0f2759e8bc65e4d9c7f))
+
 ## [1.7.0](https://github.com/NELCCG-SYSTEMS-DEVELOPMENT/razor-nhsuk-frontend-components/compare/v1.6.0...v1.7.0) (2021-08-16)
 
 

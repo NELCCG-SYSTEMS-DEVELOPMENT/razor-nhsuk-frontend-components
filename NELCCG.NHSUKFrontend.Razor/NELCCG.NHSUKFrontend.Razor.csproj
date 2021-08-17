@@ -5,11 +5,11 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <AssemblyName>NELCCG.NHSUKFrontend.Razor</AssemblyName>
     <RootNamespace>NELCCG.NHSUKFrontend.Razor</RootNamespace>
-    <Version>1.7.0</Version>
+    <Version>1.8.0</Version>
     <Company>NHS North East Lincolnshire CCG</Company>
     <Authors>Sam Collett</Authors>
-    <AssemblyVersion>1.7.0.0</AssemblyVersion>
-    <FileVersion>1.7.0.0</FileVersion>
+    <AssemblyVersion>1.8.0.0</AssemblyVersion>
+    <FileVersion>1.8.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
