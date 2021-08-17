@@ -1,12 +1,19 @@
 ﻿@{
-    ViewData["Title"] = ViewData["HeroTitle"] = "Navigation";
+    ViewData["Title"] = ViewData["HeroTitle"] = "Pagination";
+    var page = this.Context.Request.Query["page"];
+    if (page.Any())
+    {
+        ViewData["HeroMessage"] = $"You selected the {page} page";
+    }
 }
+
 @section PreContent {
     <nhsuk-breadcrumb>
         <nhsuk-breadcrumb-list>
-            <a nhsuk-breadcrumb-item asp-controller="Home">Home</a>
+            <a nhsuk-breadcrumb-item asp-controller="Home" asp-action="Index">Home</a>
+            <a nhsuk-breadcrumb-item asp-action="Index">Navigation</a>
         </nhsuk-breadcrumb-list>
-        <a nhsuk-breadcrumb-backlink asp-controller="Home">Go Home</a>
+        <a nhsuk-breadcrumb-backlink asp-action="Index">Back to Navigation</a>
     </nhsuk-breadcrumb>
 }
 
@@ -17,10 +24,11 @@
             <nhsuk-contents-list-item text="Card" href="@Url.Action("Card")"></nhsuk-contents-list-item>
             <nhsuk-contents-list-item text="Contents List" href="@Url.Action("ContentsList")"></nhsuk-contents-list-item>
             <nhsuk-contents-list-item text="List Panel" href="@Url.Action("ListPanel")"></nhsuk-contents-list-item>
-            <nhsuk-contents-list-item text="Pagination" href="@Url.Action("Pagination")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Pagination" current></nhsuk-contents-list-item>
         </nhsuk-contents-list>
     </div>
     <div class="nhsuk-grid-column-three-quarters">
-        Please select a page in the navigation menu.
+        <nhsuk-pagination previous-page="Previous Page Name" previous-url="?page=previous"
+                          next-page="Next Page Name" next-url="?page=next" />
     </div>
 </div>

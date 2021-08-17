@@ -28,5 +28,10 @@
         {
             return View();
         }
+
+        public IActionResult Pagination()
+        {
+            return View();
+        }
     }
 }

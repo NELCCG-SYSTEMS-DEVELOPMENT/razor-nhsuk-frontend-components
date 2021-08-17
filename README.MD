@@ -319,6 +319,13 @@ Wraps `<img>` with `<figure>` and adds `<figcaption>`
 </nhsuk-list>
 ```
 
+#### PaginationTagHelper
+
+```razor
+<nhsuk-pagination previous-page="Previous Page Name" previous-url="?page=previous"
+                  next-page="Next Page Name" next-url="?page=next" />
+```
+
 #### RadioTagHelper
 
   `<nhsuk-radio asp-for="FieldName"></nhsuk-radio>`
