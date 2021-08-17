@@ -9,12 +9,22 @@
             return View();
         }
 
+        public IActionResult AtoZ()
+        {
+            return View();
+        }
+
         public IActionResult Card()
         {
             return View();
         }
 
         public IActionResult ContentsList()
+        {
+            return View();
+        }
+
+        public IActionResult ListPanel()
         {
             return View();
         }

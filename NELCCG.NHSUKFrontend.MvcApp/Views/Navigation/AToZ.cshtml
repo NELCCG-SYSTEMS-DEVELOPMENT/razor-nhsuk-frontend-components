@@ -1,5 +1,10 @@
 ﻿@{
-    ViewData["Title"] = ViewData["HeroTitle"] = "Contents List";
+    ViewData["Title"] = ViewData["HeroTitle"] = "A - Z";
+    var character = this.Context.Request.Query["character"];
+    if (character.Any())
+    {
+        ViewData["HeroMessage"] = $"You selected {character}";
+    }
 }
 
 @section PreContent {
@@ -15,13 +20,18 @@
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-quarter">
         <nhsuk-contents-list>
-            <nhsuk-contents-list-item text="A - Z" href="@Url.Action("AtoZ")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="A - Z" current></nhsuk-contents-list-item>
             <nhsuk-contents-list-item text="Card" href="@Url.Action("Card")"></nhsuk-contents-list-item>
-            <nhsuk-contents-list-item text="Contents List" current></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Contents List" href="@Url.Action("ContentsList")"></nhsuk-contents-list-item>
             <nhsuk-contents-list-item text="List Panel" href="@Url.Action("ListPanel")"></nhsuk-contents-list-item>
         </nhsuk-contents-list>
     </div>
     <div class="nhsuk-grid-column-three-quarters">
-        Currently used in this and related pages.
+        <h2>Default A-Z (uses # links)</h2>
+        <nhsuk-a-z></nhsuk-a-z>
+        <h2>Some characters disabled (uses # links)</h2>
+        <nhsuk-a-z disable-characters="JQWXZ"></nhsuk-a-z>
+        <h2>Custom characters, uses anchor prefix (updates hero on click)</h2>
+        <nhsuk-a-z anchor-prefix="?character=" characters="@("$#?%\"&123ÁÄÊ")"></nhsuk-a-z>
     </div>
 </div>

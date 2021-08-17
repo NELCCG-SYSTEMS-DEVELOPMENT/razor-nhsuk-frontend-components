@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = ViewData["HeroTitle"] = "List Panel";
+}
+
+@section PreContent {
+    <nhsuk-breadcrumb>
+        <nhsuk-breadcrumb-list>
+            <a nhsuk-breadcrumb-item asp-controller="Home" asp-action="Index">Home</a>
+            <a nhsuk-breadcrumb-item asp-action="Index">Navigation</a>
+        </nhsuk-breadcrumb-list>
+        <a nhsuk-breadcrumb-backlink asp-action="Index">Back to Navigation</a>
+    </nhsuk-breadcrumb>
+}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+        <nhsuk-contents-list>
+            <nhsuk-contents-list-item text="A - Z" href="@Url.Action("AtoZ")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Card" href="@Url.Action("Card")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="Contents List" href="@Url.Action("ContentsList")"></nhsuk-contents-list-item>
+            <nhsuk-contents-list-item text="List Panel" current></nhsuk-contents-list-item>
+        </nhsuk-contents-list>
+    </div>
+    <div class="nhsuk-grid-column-three-quarters">
+        <nhsuk-a-z id="nhsuk-nav-a-z" disable-characters="DEFGHIJKMNOPQRSTUVWXYZ"></nhsuk-a-z>
+        <nhsuk-list>
+            <nhsuk-list-panel disable back-to-top-link="#nhsuk-nav-a-z" id="A" label="A" message="There are no results"></nhsuk-list-panel>
+            <nhsuk-list-panel disable back-to-top-link="#nhsuk-nav-a-z" id="B" label="B" message="There are no results"></nhsuk-list-panel>
+            <nhsuk-list-panel back-to-top-link="#nhsuk-nav-a-z" id="C" label="C">
+                <nhsuk-list-panel-item href="@Url.Action("Card")">
+                    Card
+                </nhsuk-list-panel-item>
+                <nhsuk-list-panel-item href="@Url.Action("ContentsList")">
+                    Contents List
+                </nhsuk-list-panel-item>
+            </nhsuk-list-panel>
+            <nhsuk-list-panel back-to-top-link="#nhsuk-nav-a-z" id="L" label="L">
+                <nhsuk-list-panel-item href="@this.Context.Request.Path">
+                    List Panel
+                </nhsuk-list-panel-item>
+            </nhsuk-list-panel>
+        </nhsuk-list>
+    </div>
+</div>
