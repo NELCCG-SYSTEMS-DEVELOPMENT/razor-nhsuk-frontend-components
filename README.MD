@@ -268,6 +268,22 @@ Wraps `<img>` with `<figure>` and adds `<figcaption>`
 
   `<nhsuk-label asp-for="FieldName"></nhsuk-label>`
 
+#### ListTagHelper
+
+```razor
+<nhsuk-list ordered-list>
+    <li>Ordered 1</li>
+    <li>Ordered 2</li>
+    <li>Ordered 3</li>
+</nhsuk-list>
+
+<nhsuk-list>
+    <li>Unordered 1</li>
+    <li>Unordered 2</li>
+    <li>Unordered 3</li>
+</nhsuk-list>
+```
+
 #### RadioTagHelper
 
   `<nhsuk-radio asp-for="FieldName"></nhsuk-radio>`
