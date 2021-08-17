@@ -5,7 +5,7 @@
     using System.Text.Encodings.Web;
 
     [HtmlTargetElement("nhsuk-list")]
-    [RestrictChildren("li")]
+    [RestrictChildren("li", "nhsuk-list-panel")]
     public class ListTagHelper : TagHelper
     {
         public bool OrderedList { get; set; }
