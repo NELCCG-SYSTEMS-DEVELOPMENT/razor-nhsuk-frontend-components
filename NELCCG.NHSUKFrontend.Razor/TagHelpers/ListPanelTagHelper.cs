@@ -114,7 +114,7 @@
                 anchorTag.Attributes.Add("href", this.BackToTopLink);
 
                 var svgIconHelper = new SvgIconHelper(this._env);
-                var svgContent = await svgIconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.ArrowRight);
+                var svgContent = await svgIconHelper.GetSvgIconContentAsync(SvgIcon.ArrowRight);
                 if (!string.IsNullOrWhiteSpace(svgContent))
                 {
                     anchorTag.InnerHtml.AppendHtml(svgContent);

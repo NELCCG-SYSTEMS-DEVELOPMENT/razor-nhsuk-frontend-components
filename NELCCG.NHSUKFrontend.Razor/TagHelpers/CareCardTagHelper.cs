@@ -11,13 +11,6 @@
     [HtmlTargetElement("nhsuk-care-card")]
     public class CareCardTagHelper : TagHelper
     {
-        public enum CardType
-        {
-            Immediate,
-            NonUrgent,
-            Urgent,
-        }
-
         public string ImmediateHiddenPrefix { get; set; } = "Immediate action required:";
         public string NonUrgentHiddenPrefix { get; set; } = "Non-urgent advice:";
         public string UrgentHiddenPrefix { get; set; } = "Urgent advice:";

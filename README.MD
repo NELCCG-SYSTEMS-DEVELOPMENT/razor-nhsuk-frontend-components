@@ -35,14 +35,14 @@ In page:
     var urlHelper = urlHelperFactory.GetUrlHelper(this.ViewContext);
 }
 <img class="nhsuk-icon"
-    src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIconHelper.SvgIcon.ArrowLeft))"
+    src="@urlHelper.Content(iconHelper.GetSvgIconVirtualPath(SvgIcon.ArrowLeft))"
     alt="Arrow Left" />
-@Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.ArrowRight))
+@Html.Raw(await iconHelper.GetSvgIconContentAsync(SvgIcon.ArrowRight))
 ```
 
 ### Tag Helpers
 
-In `_ViewImports.cshtml` add `@addTagHelper *, NELCCG.NHSUKFrontend.Razor`
+In `_ViewImports.cshtml` add `@using NELCCG.NHSUKFrontend.Razor` and `@addTagHelper *, NELCCG.NHSUKFrontend.Razor`
 
 #### ActionLinkTagHelper
 

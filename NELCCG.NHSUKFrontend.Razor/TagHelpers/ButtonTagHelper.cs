@@ -4,18 +4,10 @@
     using Microsoft.AspNetCore.Mvc.TagHelpers;
     using System.Text.Encodings.Web;
     using System.Threading.Tasks;
-    using System;
 
     [HtmlTargetElement("nhsuk-button")]
     public class ButtonTagHelper : ElementTagHelperBase
     {
-        public enum ButtonType
-        {
-            Button,
-            Reset,
-            Submit,
-        }
-
         public bool Reverse { get; set; }
         public bool Secondary { get; set; }
         public ButtonType Type { get; set; } = ButtonType.Submit;

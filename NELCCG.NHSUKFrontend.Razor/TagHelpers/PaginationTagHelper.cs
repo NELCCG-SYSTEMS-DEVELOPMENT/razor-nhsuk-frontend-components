@@ -119,8 +119,8 @@
             {
                 var svgIconHelper = new SvgIconHelper(this._env);
                 var svgContent = await svgIconHelper.GetSvgIconContentAsync(
-                    type == "previous" ? SvgIconHelper.SvgIcon.ArrowLeft
-                    : SvgIconHelper.SvgIcon.ArrowRight
+                    type == "previous" ? SvgIcon.ArrowLeft
+                    : SvgIcon.ArrowRight
                 );
                 if (!string.IsNullOrWhiteSpace(svgContent))
                 {

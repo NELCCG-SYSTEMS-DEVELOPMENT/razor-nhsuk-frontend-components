@@ -8,23 +8,6 @@
     {
         private readonly IWebHostEnvironment _env;
 
-        public enum SvgIcon
-        {
-            ArrowLeft,
-            ArrowRight,
-            ArrowRightCircle,
-            ChevronLeft,
-            ChevronRight,
-            Close,
-            Cross,
-            EmDash,
-            EmDashSmall,
-            Minus,
-            Plus,
-            Search,
-            Tick,
-        }
-
         public SvgIconHelper(IWebHostEnvironment env)
         {
             this._env = env;

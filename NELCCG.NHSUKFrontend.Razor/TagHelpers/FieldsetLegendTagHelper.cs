@@ -7,14 +7,6 @@
     [HtmlTargetElement("nhsuk-fieldset-legend", ParentTag = "nhsuk-fieldset")]
     public class FieldsetLegendTagHelper : TagHelper
     {
-        public enum LegendSize
-        {
-            ExtraLarge,
-            Large,
-            Medium,
-            Small
-        }
-
         public int HeadingLevel { get; set; } = 1;
         public bool IsPageHeading { get; set; }
         public LegendSize? Size { get; set; }

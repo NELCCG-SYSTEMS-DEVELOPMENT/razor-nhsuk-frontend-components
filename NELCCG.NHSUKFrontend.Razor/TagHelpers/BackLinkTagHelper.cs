@@ -39,7 +39,7 @@ namespace NELCCG.NHSUKFrontend.Razor.TagHelpers
             output.PreElement.SetHtmlContent(wrapper.RenderStartTag());
 
             var svgIconHelper = new SvgIconHelper(this._env);
-            var svgContent = await svgIconHelper.GetSvgIconContentAsync(SvgIconHelper.SvgIcon.ChevronLeft);
+            var svgContent = await svgIconHelper.GetSvgIconContentAsync(SvgIcon.ChevronLeft);
             if (!string.IsNullOrWhiteSpace(svgContent))
             {
                 output.PreContent.AppendHtml(svgContent);

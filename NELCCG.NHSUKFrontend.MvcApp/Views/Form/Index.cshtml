@@ -36,7 +36,7 @@
     }
 
     <nhsuk-fieldset>
-        <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your name?</nhsuk-fieldset-legend>
+        <nhsuk-fieldset-legend size="LegendSize.Medium" is-page-heading heading-level="2">What is your name?</nhsuk-fieldset-legend>
         <nhsuk-form-group contains-error-message="@emptySurname">
             @if (emptySurname)
             {
@@ -59,7 +59,7 @@
 
 
     <nhsuk-fieldset>
-        <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your date of birth?</nhsuk-fieldset-legend>
+        <nhsuk-fieldset-legend size="LegendSize.Medium" is-page-heading heading-level="2">What is your date of birth?</nhsuk-fieldset-legend>
         <nhsuk-form-group contains-error-message="@invalidDoB">
             <nhsuk-date-input input-error="@invalidDoB" id="DateOfBirth" asp-for="DateOfBirth">
                 <nhsuk-label asp-for="DateOfBirth" label-is-visually-hidden></nhsuk-label>
@@ -72,7 +72,7 @@
     </nhsuk-fieldset>
 
     <nhsuk-fieldset>
-        <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your favourite colour?</nhsuk-fieldset-legend>
+        <nhsuk-fieldset-legend size="LegendSize.Medium" is-page-heading heading-level="2">What is your favourite colour?</nhsuk-fieldset-legend>
         <nhsuk-form-group>
             <nhsuk-radios contains-conditional>
                 <nhsuk-radio asp-for="FavouriteColour" label="Red" value="@("Red")"></nhsuk-radio>
@@ -91,7 +91,7 @@
     </nhsuk-fieldset>
 
     <nhsuk-fieldset>
-        <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your nationality?</nhsuk-fieldset-legend>
+        <nhsuk-fieldset-legend size="LegendSize.Medium" is-page-heading heading-level="2">What is your nationality?</nhsuk-fieldset-legend>
         <nhsuk-hint>If you have dual nationality, select all options that are relevant to you.</nhsuk-hint>
         <nhsuk-form-group>
             <nhsuk-checkboxes>
@@ -106,7 +106,7 @@
 
     <nhsuk-form-group>
         <nhsuk-textarea asp-for="Biography">
-            <nhsuk-label asp-for="Biography" size="LabelTagHelper.LabelSize.Medium" is-page-heading heading-level="2"></nhsuk-label>
+            <nhsuk-label asp-for="Biography" size="LabelSize.Medium" is-page-heading heading-level="2"></nhsuk-label>
             <nhsuk-hint>Tell us a little something about yourself</nhsuk-hint>
         </nhsuk-textarea>
     </nhsuk-form-group>

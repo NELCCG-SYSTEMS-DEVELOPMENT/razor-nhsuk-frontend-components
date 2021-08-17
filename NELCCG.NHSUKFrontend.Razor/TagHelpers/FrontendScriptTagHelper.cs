@@ -14,15 +14,15 @@
         }
 
         [HtmlAttributeName("nhsuk-frontend-version")]
-        public FrontendOptions.FrontendVersion Version { get; set; }
+        public FrontendVersion Version { get; set; }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             var ns = System.IO.Path.GetFileNameWithoutExtension(this.GetType().Module.Name);
             var href = this.Version switch
             {
-                FrontendOptions.FrontendVersion.Version__4_1_0 => $"~/_content/{ns}/js/nhsuk-4.1.0.min.js",
-                FrontendOptions.FrontendVersion.Version__5_1_0 => $"~/_content/{ns}/js/nhsuk-5.1.0.min.js",
+                FrontendVersion.Version__4_1_0 => $"~/_content/{ns}/js/nhsuk-4.1.0.min.js",
+                FrontendVersion.Version__5_1_0 => $"~/_content/{ns}/js/nhsuk-5.1.0.min.js",
                 _ => null,
             };
 

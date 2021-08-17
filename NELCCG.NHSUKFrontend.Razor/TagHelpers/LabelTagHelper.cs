@@ -10,14 +10,6 @@
     [HtmlTargetElement("nhsuk-label")]
     public class LabelTagHelper : TagHelper
     {
-        public enum LabelSize
-        {
-            ExtraLarge,
-            Large,
-            Medium,
-            Small
-        }
-
         [HtmlAttributeName("asp-for")]
         public ModelExpression For { get; set; }
 

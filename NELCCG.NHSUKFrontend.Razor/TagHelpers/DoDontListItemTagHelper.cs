@@ -29,7 +29,7 @@
                 var svgIconHelper = new SvgIconHelper(this._env);
                 var svgContent = await svgIconHelper.GetSvgIconContentAsync(
                     listType == DoDontListType.Do ?
-                    SvgIconHelper.SvgIcon.Tick : SvgIconHelper.SvgIcon.Cross
+                    SvgIcon.Tick : SvgIcon.Cross
                 );
 
                 output.Content.AppendHtml(svgContent);
