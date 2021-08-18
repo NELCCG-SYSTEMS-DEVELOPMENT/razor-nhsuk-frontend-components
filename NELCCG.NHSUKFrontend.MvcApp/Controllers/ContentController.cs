@@ -50,5 +50,10 @@
             return View();
         }
 
+        public IActionResult Tag()
+        {
+            return View();
+        }
+
     }
 }
