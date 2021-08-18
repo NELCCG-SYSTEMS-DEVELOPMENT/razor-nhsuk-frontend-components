@@ -391,6 +391,17 @@ SummaryListRowActionListTagHelper, SummaryListRowActionListItemTagHelper**
 </nhsuk-summary-list>
 ```
 
+#### TagTagHelper
+
+```razor
+<nhsuk-tag>
+  Active
+</nhsuk-tag>
+<nhsuk-tag variant="white">
+  Started
+</nhsuk-tag>
+```
+
 #### TextAreaTagHelper
 
   `<nhsuk-textarea asp-for="FieldName"></nhsuk-textarea>`
@@ -398,6 +409,14 @@ SummaryListRowActionListTagHelper, SummaryListRowActionListItemTagHelper**
 #### TextInputTagHelper
 
   `<nhsuk-input asp-for="FieldName"></nhsuk-input>`
+
+#### WarningCalloutTagHelper
+
+```razor
+<nhsuk-warning-callout heading="School, nursery or work">
+    <p>Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.</p>
+</nhsuk-warning-callout>
+```
 
 ### View Components
 
