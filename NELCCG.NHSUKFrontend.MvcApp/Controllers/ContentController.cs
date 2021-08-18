@@ -55,5 +55,10 @@
             return View();
         }
 
+        public IActionResult WarningCallout()
+        {
+            return View();
+        }
+
     }
 }
