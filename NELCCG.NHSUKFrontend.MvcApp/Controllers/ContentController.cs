@@ -50,6 +50,11 @@
             return View();
         }
 
+        public IActionResult Table()
+        {
+            return View();
+        }
+
         public IActionResult Tag()
         {
             return View();

@@ -391,6 +391,75 @@ SummaryListRowActionListTagHelper, SummaryListRowActionListItemTagHelper**
 </nhsuk-summary-list>
 ```
 
+#### TableTagHelper, TableHeadTagHelper, TableBodyTagHelper, TableBodyRowTagHelper, TableCellTagHelper
+
+```razor
+<nhsuk-table caption="Plain table caption">
+    <nhsuk-table-head>
+        <nhsuk-table-cell>Column 1</nhsuk-table-cell>
+        <nhsuk-table-cell>Column 2</nhsuk-table-cell>
+    </nhsuk-table-head>
+    <nhsuk-table-body>
+        <nhsuk-table-body-row>
+            <nhsuk-table-cell header-cell>Row 1 Column 1</nhsuk-table-cell>
+            <nhsuk-table-cell>Row 1 Column 2</nhsuk-table-cell>
+        </nhsuk-table-body-row>
+        <nhsuk-table-body-row>
+            <nhsuk-table-cell colspan="2">The contents of this cell is set up to span two columns</nhsuk-table-cell>
+        </nhsuk-table-body-row>
+        <nhsuk-table-body-row>
+            <nhsuk-table-cell header-cell rowspan="2">Row 3 and 4 Column 1</nhsuk-table-cell>
+            <nhsuk-table-cell>Row 3 Column 2</nhsuk-table-cell>
+        </nhsuk-table-body-row>
+        <nhsuk-table-body-row>
+            <nhsuk-table-cell>Row 4 Column 2</nhsuk-table-cell>
+        </nhsuk-table-body-row>
+    </nhsuk-table-body>
+</nhsuk-table>
+        
+<nhsuk-table responsive caption="Responsive table">
+    <nhsuk-table-head>
+        <nhsuk-table-cell>Column 1</nhsuk-table-cell>
+        <nhsuk-table-cell format="numeric">Numeric column</nhsuk-table-cell>
+    </nhsuk-table-head>
+    <nhsuk-table-body>
+        <nhsuk-table-body-row>
+            <nhsuk-table-cell responsive-heading="Column 1">Row 1 Column 1</nhsuk-table-cell>
+            <nhsuk-table-cell responsive-heading="Numeric column" format="numeric">21</nhsuk-table-cell>
+        </nhsuk-table-body-row>
+        <nhsuk-table-body-row>
+            <nhsuk-table-cell responsive-heading="Column 1">Row 2 Column 1</nhsuk-table-cell>
+            <nhsuk-table-cell responsive-heading="Numeric column" format="numeric">43</nhsuk-table-cell>
+        </nhsuk-table-body-row>
+        <nhsuk-table-body-row>
+            <nhsuk-table-cell responsive-heading="Column 1">Row 3 Column 1</nhsuk-table-cell>
+            <nhsuk-table-cell responsive-heading="Numeric column" format="numeric">76</nhsuk-table-cell>
+        </nhsuk-table-body-row>
+    </nhsuk-table-body>
+</nhsuk-table>
+        
+<nhsuk-table panel heading="In panel" caption="Also with caption">
+    <nhsuk-table-head>
+        <nhsuk-table-cell>Column 1</nhsuk-table-cell>
+        <nhsuk-table-cell format="numeric">Numeric column</nhsuk-table-cell>
+    </nhsuk-table-head>
+    <nhsuk-table-body>
+        <nhsuk-table-body-row>
+            <nhsuk-table-cell>Row 1 Column 1</nhsuk-table-cell>
+            <nhsuk-table-cell format="numeric">21</nhsuk-table-cell>
+        </nhsuk-table-body-row>
+        <nhsuk-table-body-row>
+            <nhsuk-table-cell>Row 2 Column 1</nhsuk-table-cell>
+            <nhsuk-table-cell format="numeric">43</nhsuk-table-cell>
+        </nhsuk-table-body-row>
+        <nhsuk-table-body-row>
+            <nhsuk-table-cell>Row 3 Column 1</nhsuk-table-cell>
+            <nhsuk-table-cell format="numeric">76</nhsuk-table-cell>
+        </nhsuk-table-body-row>
+    </nhsuk-table-body>
+</nhsuk-table>
+```
+
 #### TagTagHelper
 
 ```razor
