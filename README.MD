@@ -395,6 +395,10 @@ Can make use of **FormGroupTagHelper** and **PreElementTagHelper** to add a labe
 </nhsuk-form-group>
 ```
 
+#### SkipLinkTagHelper
+
+`<nhsuk-skip-link>Skip to main content</nhsuk-skip-link>`
+
 #### SummaryListTagHelper
 
 Related helpers:  

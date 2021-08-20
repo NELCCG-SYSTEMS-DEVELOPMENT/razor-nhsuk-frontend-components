@@ -33,7 +33,7 @@
     @await RenderSectionAsync("Head", required: false)
 </head>
 <body>
-    <a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+    <nhsuk-skip-link>Skip to main content</nhsuk-skip-link>
     <vc:header properties="@headerProperties"></vc:header>
     <nhsuk-hero heading="@ViewData["HeroTitle"]" text="@ViewData["HeroMessage"]" image-url="@ViewData["HeroImage"]"></nhsuk-hero>
     @await RenderSectionAsync("PreContent", required: false)
