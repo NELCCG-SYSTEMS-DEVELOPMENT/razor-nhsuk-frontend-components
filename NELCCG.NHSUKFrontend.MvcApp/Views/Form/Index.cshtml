@@ -8,6 +8,7 @@
 
     var invalidDoB = Model?.DateOfBirth > DateTime.Now;
     var emptySurname = string.IsNullOrWhiteSpace(Model?.Surname);
+    var noRole = string.IsNullOrWhiteSpace(Model?.Role);
     var hasErrors = invalidDoB || emptySurname;
 }
 
@@ -31,6 +32,10 @@
             @if (invalidDoB)
             {
                 <nhsuk-error-summary-list-item href="#DateOfBirth__Day">Date of birth must be in the past</nhsuk-error-summary-list-item>
+            }
+            @if (noRole)
+            {
+                <nhsuk-error-summary-list-item href="#Role">Role is required</nhsuk-error-summary-list-item>
             }
         </nhsuk-error-summary>
     }
@@ -57,6 +62,32 @@
         </nhsuk-form-group>
     </nhsuk-fieldset>
 
+    <nhsuk-fieldset>
+        <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your role in the NHS?</nhsuk-fieldset-legend>
+        <nhsuk-form-group contains-error-message="@noRole">
+            <select nhsuk-select asp-for="Role" id="Role">
+                <nhsuk-pre-element>
+                    <nhsuk-label asp-for="Role" label-is-visually-hidden></nhsuk-label>
+                    <nhsuk-hint>
+                        Based on the <a href="https://www.nhsemployers.org/articles/national-job-profiles" rel="external">national job profiles</a>.
+                    </nhsuk-hint>
+                    @if (noRole)
+                    {
+                        <nhsuk-error-message>No role selected</nhsuk-error-message>
+                    }
+                </nhsuk-pre-element>
+                <option value="">--Select a role--</option>
+                <option value="admin">Administrative services</option>
+                <option value="ahp">Allied Health Professional</option>
+                <option value="emergency">Emergency services</option>
+                <option value="healthscience">Health science services</option>
+                <option value="nursing">Nursing and midwifery</option>
+                <option value="social">Personal social services</option>
+                <option value="support">Support services</option>
+                <option value="manager">Professional manager</option>
+            </select>
+        </nhsuk-form-group>
+    </nhsuk-fieldset>
 
     <nhsuk-fieldset>
         <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">What is your date of birth?</nhsuk-fieldset-legend>

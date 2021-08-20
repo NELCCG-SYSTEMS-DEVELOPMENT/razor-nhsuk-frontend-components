@@ -326,6 +326,27 @@ Wraps `<img>` with `<figure>` and adds `<figcaption>`
                   next-page="Next Page Name" next-url="?page=next" />
 ```
 
+#### PreElementTagHelper
+
+This tag helper enables content to be added pre-element to a parent tag helper.  
+Currently only used for **SelectTagHelper**.
+
+```razor
+<select nhsuk-select>
+    <nhsuk-pre-element>
+        ...
+    </nhsuk-pre-element>
+    <option>Option 1</option>
+    <option>Option 2</option>
+</select>
+```
+
+In **ProcessAsync** override in custom tag helper. Call `output.GetChildContentAsync()` first on the parent to render nested content.
+```cs
+_ = await output.GetChildContentAsync();
+PreElementTagHelper.AppendPreElementContent(this.ViewContext, output);
+```
+
 #### RadioTagHelper
 
   `<nhsuk-radio asp-for="FieldName"></nhsuk-radio>`
@@ -346,6 +367,33 @@ Wraps `<img>` with `<figure>` and adds `<figcaption>`
 #### RadiosTagHelper
 
   `<nhsuk-radios>...</nhsuk-radios>`
+
+#### SelectTagHelper
+
+Can make use of **FormGroupTagHelper** and **PreElementTagHelper** to add a label, hint and error message.
+
+```razor
+<nhsuk-form-group>
+    <select nhsuk-select asp-for="Role" id="Role">
+        <nhsuk-pre-element>
+            <nhsuk-label asp-for="Role"></nhsuk-label>
+            <nhsuk-hint>
+                Based on the <a href="https://www.nhsemployers.org/articles/national-job-profiles" rel="external">national job profiles</a>.
+            </nhsuk-hint>
+            <nhsuk-error-message>No role selected</nhsuk-error-message>
+        </nhsuk-pre-element>
+        <option value="">--Select a role--</option>
+        <option value="admin">Administrative services</option>
+        <option value="ahp">Allied Health Professional</option>
+        <option value="emergency">Emergency services</option>
+        <option value="healthscience">Health science services</option>
+        <option value="nursing">Nursing and midwifery</option>
+        <option value="social">Personal social services</option>
+        <option value="support">Support services</option>
+        <option value="manager">Professional manager</option>
+    </select>
+</nhsuk-form-group>
+```
 
 #### SummaryListTagHelper
 
