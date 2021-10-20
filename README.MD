@@ -3,7 +3,7 @@
 This solution consists of two projects, one with the Razor Components (NELCCG.NHSUKFrontent.Razor)
 and a sample application consuming those components (NELCCG.NHSUKFrontend.MvcApp). It requires .NET Core 5.0 or later.
 
-It includes the [NHS.UK Frontend](https://github.com/nhsuk/nhsuk-frontend) assets (CSS, favicons, SVG icons and logos) for both version 4.1.0 and 5.1.0.
+It includes the [NHS.UK Frontend](https://github.com/nhsuk/nhsuk-frontend) assets (CSS, favicons, SVG icons and logos) for versions 4.1.0, 5.1.0 and 5.2.0.
 There are tag helpers for including the CSS `FrontendLinkTagHelper` and JavaScript `FrontendScriptTagHelper`, although not currently the favicons or logos.  
 
 The form components can be bound to models using `asp-for`.
@@ -251,12 +251,12 @@ Wraps `<img>` with `<figure>` and adds `<figcaption>`
 #### FrontendLinkTagHelper
 
   Generate link for frontend CSS  
-  `<link nhsuk-frontend-version="Version__5_1_0" />`
+  `<link nhsuk-frontend-version="Version__5_2_0" />`
 
 #### FrontendScriptTagHelper
 
   Generate script tag for frontend JS   
-  `<script nhsuk-frontend-version="Version__5_1_0"></script>`
+  `<script nhsuk-frontend-version="Version__5_2_0"></script>`
 
 #### HeroTagHelper
 
