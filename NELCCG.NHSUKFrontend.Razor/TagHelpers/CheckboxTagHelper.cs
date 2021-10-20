@@ -21,6 +21,18 @@
         /// </summary>
         public string AriaControls { get; set; }
 
+        /// <summary>
+        /// Set to <c>true</c> to implement 'None of the above' behaviour.
+        ///   Requires v5.2.0 or later of NHS Frontend included.
+        /// </summary>
+        public bool Exclusive { get; set; }
+
+        /// <summary>
+        /// Items in this group are cleared if checkbox with <see cref="Exclusive"/> is checked.
+        ///   Requires v5.2.0 or later of NHS Frontend included.
+        /// </summary>
+        public string ExclusiveGroup { get; set; }
+
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
             await base.ProcessAsync(context, output);
@@ -67,6 +79,16 @@
                 output.Attributes.SetAttribute("aria-expanded",
                     output.Attributes.TryGetAttribute("checked", out _).ToString().ToLower()
                 );
+            }
+
+            if (this.Exclusive)
+            {
+                output.Attributes.SetAttribute("data-checkbox-exclusive", this.Exclusive);
+            }
+
+            if (!string.IsNullOrWhiteSpace(this.ExclusiveGroup))
+            {
+                output.Attributes.SetAttribute("data-checkbox-exclusive-group", this.ExclusiveGroup);
             }
 
             var wrapper = new TagBuilder("div");

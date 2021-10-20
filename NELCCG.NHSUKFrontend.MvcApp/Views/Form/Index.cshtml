@@ -135,6 +135,35 @@
         </nhsuk-form-group>
     </nhsuk-fieldset>
 
+    <nhsuk-fieldset>
+        <nhsuk-fieldset-legend size="FieldsetLegendTagHelper.LegendSize.Medium" is-page-heading heading-level="2">How would you prefer to be contacted?</nhsuk-fieldset-legend>
+        <nhsuk-hint>Select all options that are relevant to you.</nhsuk-hint>
+        <nhsuk-form-group>
+            <nhsuk-checkboxes contains-conditional>
+                <nhsuk-checkbox asp-for="ContactPreferences" exclusive-group="communication-preferences" aria-controls="conditional-contact-email" label="Email" value="@("Email")"></nhsuk-checkbox>
+                <nhsuk-checkbox-conditional id="conditional-contact-email">
+                    <nhsuk-input asp-for="ContactPreferenceEmail">
+                        <nhsuk-label>Email address</nhsuk-label>
+                    </nhsuk-input>
+                </nhsuk-checkbox-conditional>
+                <nhsuk-checkbox asp-for="ContactPreferences" exclusive-group="communication-preferences" aria-controls="conditional-contact-phone" label="Phone" value="@("Phone")"></nhsuk-checkbox>
+                <nhsuk-checkbox-conditional id="conditional-contact-phone">
+                    <nhsuk-input asp-for="ContactPreferenceTelephone">
+                        <nhsuk-label>Phone number</nhsuk-label>
+                    </nhsuk-input>
+                </nhsuk-checkbox-conditional>
+                <nhsuk-checkbox asp-for="ContactPreferences" exclusive-group="communication-preferences" aria-controls="conditional-contact-text" label="Text message" value="@("Text message")"></nhsuk-checkbox>
+                <nhsuk-checkbox-conditional id="conditional-contact-text">
+                    <nhsuk-input asp-for="ContactPreferenceTextMessage">
+                        <nhsuk-label>Mobile phone number</nhsuk-label>
+                    </nhsuk-input>
+                </nhsuk-checkbox-conditional>
+                <nhsuk-checkbox-divider><span>or</span></nhsuk-checkbox-divider>
+                <nhsuk-checkbox asp-for="ContactPreferences" exclusive exclusive-group="communication-preferences" label="None of the above" value="@("None")"></nhsuk-checkbox>
+            </nhsuk-checkboxes>
+        </nhsuk-form-group>
+    </nhsuk-fieldset>
+
     <nhsuk-form-group>
         <nhsuk-textarea asp-for="Biography">
             <nhsuk-label asp-for="Biography" size="LabelTagHelper.LabelSize.Medium" is-page-heading heading-level="2"></nhsuk-label>

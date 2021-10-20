@@ -22,6 +22,14 @@
 
         public List<string> Nationality { get; set; } = new List<string>();
 
+        public List<string> ContactPreferences { get; set; } = new List<string>();
+
+        public string ContactPreferenceEmail { get; set; }
+
+        public string ContactPreferenceTelephone { get; set; }
+
+        public string ContactPreferenceTextMessage { get; set; }
+
         public string Biography { get; set; }
 
         public string Role { get; set; }
