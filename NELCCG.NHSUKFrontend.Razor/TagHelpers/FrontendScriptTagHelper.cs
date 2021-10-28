@@ -24,6 +24,7 @@
                 FrontendOptions.FrontendVersion.Version__4_1_0 => $"~/_content/{ns}/js/nhsuk-4.1.0.min.js",
                 FrontendOptions.FrontendVersion.Version__5_1_0 => $"~/_content/{ns}/js/nhsuk-5.1.0.min.js",
                 FrontendOptions.FrontendVersion.Version__5_2_0 => $"~/_content/{ns}/js/nhsuk-5.2.0.min.js",
+                FrontendOptions.FrontendVersion.Version__5_2_1 => $"~/_content/{ns}/js/nhsuk-5.2.1.min.js",
                 _ => null,
             };
 

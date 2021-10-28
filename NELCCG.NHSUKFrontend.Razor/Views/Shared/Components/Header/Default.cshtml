@@ -104,12 +104,17 @@
         >
             @if (Model.ShowNav)
             {
-                <div class="nhsuk-header__menu">
+                var menuClass = "nhsuk-header__menu";
+                if (!Model.ShowSearch)
+                {
+                    menuClass += " nhsuk-header__menu--only";
+                }
+                <div class="@menuClass">
                     <button
                         class="nhsuk-header__menu-toggle"
                         id="toggle-menu"
                         aria-controls="header-navigation"
-                        aria-label="Open menu">Menu</button
+                        aria-expanded="false">Menu</button
                     >
                 </div>
             }
